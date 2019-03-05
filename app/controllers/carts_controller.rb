@@ -29,6 +29,7 @@ class CartsController < ApplicationController
     if current_user.cart == nil
       @cart = Cart.create!(user: current_user)
     end
+    puts params
   end
 
   # PATCH/PUT /carts/1
@@ -50,8 +51,7 @@ class CartsController < ApplicationController
   end
 
   def add_product_to_cart
-    @product = Product.find(params[:product_id])
-    CartProduct.create!(cart: current_user.cart, product: @product)
+    CartProduct.create!(cart: current_user.cart, product: Product.find(params[:product_id]))
   end
 
   private
