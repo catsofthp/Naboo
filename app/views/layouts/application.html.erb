@@ -27,7 +27,9 @@
             <li class="nav-item">
               <a class="nav-link nav-link-icon" href=@current_user.cart>
                 <i class="fas fa-shopping-cart"></i>
-                <span class="nav-link-inner--text d-lg-primary">Panier</span>
+                <span class="nav-link-inner--text d-lg-primary">Panier
+                  <%= if current_user.cart != nil then "(#{current_user.cart.products.count})" end %>
+                </span>
               </a>
             </li>
           </ul>
