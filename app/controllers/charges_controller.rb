@@ -10,6 +10,7 @@ class ChargesController < ApplicationController
 		# Amount in cents
 		@cart = Cart.find(params[:cart_id])
 	  @amount = @cart.payable_amount
+	  @amount = Float(@amount).round(2)
 
 	  customer = Stripe::Customer.create({
 	    email: params[:stripeEmail],
@@ -18,7 +19,7 @@ class ChargesController < ApplicationController
 
 	  charge = Stripe::Charge.create({
 	    customer: customer.id,
-	    amount: @amount*100,
+	    amount: @amount.to_i,
 	    description: 'Rails Stripe customer',
 	    currency: 'eur',
 	  })

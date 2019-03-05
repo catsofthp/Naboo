@@ -125,7 +125,7 @@
             <div class="col-md-6 order-md-2 mb-4 mb-md-0">
               <div class="d-flex align-items-center justify-content-md-end">
                 <span class="h6 text-muted d-inline-block mr-3 mb-0">Montant total:</span>
-                <span class="h4 mb-0"><%= @cart.payable_amount %> €</span>
+                <span class="h4 mb-0"><%= @cart.payable_amount.round(2) %> €</span>
               </div>
             </div>
             <div class="col-md-6 order-md-1">
