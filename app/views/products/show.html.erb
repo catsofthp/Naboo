@@ -51,6 +51,7 @@
                 </div>
                 <div class="col-sm-6 text-sm-right">
                   <!-- Add to cart -->
+<<<<<<< HEAD
                   <<<<<<< HEAD
                   <button type="button" class="btn btn-primary btn-icon">
 
@@ -63,6 +64,11 @@
                     <%= link_to carts_path(:product_id => @product.id), remote: true, method: "POST" do %>
                     <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
                     >>>>>>> ba5d73a647a7d3ce5ebb971bc2e346c404257535
+=======
+                  <% if user_signed_in? %>
+                    <%= link_to carts_path(:product_id => @product.id), remote: true, method: "POST" do %>
+                      <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
+>>>>>>> eeee6fe039fd712e217b6b9726ed06d0d37b2e52
                     <% end %>
                     <% else %>
                     <%= link_to "Please log in to purchase", new_user_session_path, class: "class='btn btn-primary btn-icon'" %>
