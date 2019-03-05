@@ -84,7 +84,7 @@
                     <input name="<%= product.id %>_quantity" type="text" class="form-control form-control-sm text-center" style="width: 80px;" value=<%= current_user.cart.products.where(id: product.id).count %>>
                   </td>
                   <td class="total">
-                    2
+                    <%= current_user.cart.products.where(id: product.id).count * product.price %> €
                   </td>
                   <td class="text-right">
                     <!-- Actions -->
