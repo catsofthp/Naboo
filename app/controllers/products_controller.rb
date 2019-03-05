@@ -79,4 +79,10 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :price, :image_url)
     end
+    def is_owner?
+      if current_user.is_admin =! 1
+        flash[:error] = "Tu ne peux pas accéder à une page qui ne t'appartient pas"
+        redirect_to root_path
+      end
+    end
 end
