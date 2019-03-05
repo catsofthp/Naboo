@@ -9,93 +9,11 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-horizontal navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="/products">NABOO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-primary">
-          <ul class="navbar-nav ml-lg-auto">
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="#">
-                <i class="fab fa-instagram"></i>
-                <span class="nav-link-inner--text">Instagram</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <% if user_signed_in? %>
-                <%= link_to  cart_path(current_user.cart), class:"nav-link nav-link-icon" do %>
-                  <i class="fas fa-shopping-cart"></i>
-                  <span class="nav-link-inner--text d-lg-primary">Panier
-                    <%= if current_user.cart != nil then "(#{current_user.cart.products.count})" end %>
-                  </span>
-                <% end %>
-                <%= link_to destroy_user_session_path, method: "DELETE" do %>
-                  <button type="button" class="btn btn-danger btn-icon"> Sign Out </button>
-                <% end %>
-              <% else %>
-                <%= link_to new_user_session_path do %>
-                  <button type="button" class="btn btn-primary btn-icon"> Log In </button>
-                <% end %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <%= yield %>
-  <footer class="footer p-0 footer-dark bg-gradient-dark" id="footer-main">
-    <div class="container">
-      <div class="py-4">
-        <div class="row align-items-md-center">
-          <div class="col-md-4 mb-4 mb-md-0">
-            <div class="d-flex align-items-center">
-              <p class="text-sm mb-0">© Cats for sale. 2019 <a href="https://www.thehackingproject.org/" target="_blank">THP</a>. All rights reserved.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 mb-4 mb-sm-0">
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link" href="pages/utility/support.html">SAV</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/utility/terms.html">Conditions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/utility/privacy.html">Confidentialité</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
-              <li class="nav-item">
-                <a class="nav-link" href="https://dribbble.com/webpixels" target="_blank">
-                  <i class="fab fa-dribbble"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/webpixelsofficial" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/webpixels" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+
+<%= render 'layouts/header' %>
+<%= render 'layouts/flash'%>
+<%= yield %>
+<%= render 'layouts/footer'%>
+
 </body>
 </html>
