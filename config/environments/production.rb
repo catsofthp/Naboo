@@ -2,6 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # Config MailJet for SMTP email
   config.action_mailer.delivery_method = :mailjet
+  config.active_storage.service = :local
   # Code is not reloaded between requests.
   config.cache_classes = true
 
