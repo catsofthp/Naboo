@@ -124,7 +124,7 @@
               </div>
             </td>
             <td class="total">
-              <%= current_user.cart.products.where(id: product.id).count * product.price.round(2) %> €
+              <%= (current_user.cart.products.where(id: product.id).count * product.price).round(2) %> €
             </td>
             <td class="text-right">
               <!-- Actions -->
