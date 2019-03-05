@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :create_cart
+  before_action :is_owner?, only: [:edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
@@ -12,8 +13,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @products = Product.all
-    @product = Product.find(params[:id])
-
   end
 
   # GET /products/new
@@ -79,10 +78,13 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :price, :image_url)
     end
+
     def is_owner?
-      if current_user.is_admin =! 1
-        flash[:error] = "Tu ne peux pas accéder à une page qui ne t'appartient pas"
+      if current_user.is_admin == true
+      else
+        flash[:error] = "Tu ne peux pas accéder à cette page car tu n'es pas admin !"
         redirect_to root_path
       end
     end
+
 end

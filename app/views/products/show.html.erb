@@ -54,7 +54,7 @@
                 <div class="col-sm-6 text-sm-right">
                   <!-- Add to cart -->
                   <% if user_signed_in? %>
-                    <%= link_to carts_path(:product_id => @product.id), method: "POST" do %>
+                    <%= link_to carts_path(:product_id => @product.id), method: "POST", remote: true do %>
                       <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
                     <% end %>
                   <% else %>
