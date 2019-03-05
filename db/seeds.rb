@@ -9,8 +9,6 @@
 #  Source pour les descriptions : https://jardinage.lemonde.fr/dossiers-cat3-12-races-chats.html
 
 Product.destroy_all
-Order.destroy_all
-User.destroy_all
 
 images = [
   "https://jardinage.lemonde.fr/images/dossiers/2019-02/ural-rex-111519.jpg",

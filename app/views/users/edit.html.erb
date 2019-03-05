@@ -6,6 +6,22 @@
 <%= link_to 'SHOW', @user, class: "btn btn-default btn-rose" %>
 <%= link_to 'BACK TO SHOP', root_path, class: "btn btn-default btn-primary" %>
 
+
+<!-- Liste des events -->
+<tbody>
+
+<% @orders.each do |event| %>
+  <tr>
+    <% if current_user == event.user then%>
+      <td class="text-center"><%= event.id %></td>
+      <td class="text-center"><%= event.products.each do |testing| %></td>
+          <td class="text-center"><%= testing.title %></td>
+        <% end %>
+    <%else end %>
+  </tr>
+<% end %>
+</tbody>
+
     <!-- Header (account) -->
     <section class="header-account-page bg-primary d-flex align-items-end" data-offset-top="#header-main">
       <!-- Header container -->
