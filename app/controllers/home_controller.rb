@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
-  def index
+  before_action :create_cart
+
+  def index  
   end
+
 end

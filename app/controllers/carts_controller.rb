@@ -42,9 +42,14 @@ class CartsController < ApplicationController
     @products = []
     Product.all.each { |product| if current_user.cart.products.include?(product) == true then @products << product end }
     @products.each { |product|
-      CartProduct.where(cart: current_user.cart, product: product).destroy_all
+      CartProduct.where(["cart_id = ? and product_id = ?", current_user.cart.id, product.id]).destroy_all;
       params[:"#{product.id}_quantity"].to_i.times { CartProduct.create!(cart: current_user.cart, product: product) }
+    puts "X_X"*50
+      puts params
+    puts params[:"#{product.id}_quantity"]
     }
+
+    render :show
   end
 
   # DELETE /carts/1
