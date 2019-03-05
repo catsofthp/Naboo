@@ -129,12 +129,14 @@
               </div>
             </div>
             <div class="col-md-6 order-md-1">
-              <button type="button" class="btn btn-animated btn-primary btn-animated-y">
-                <span class="btn-inner--visible">Paiement</span>
-                <span class="btn-inner--hidden">
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-              </button>
+              <%= link_to new_cart_charge_path(@cart) do %>
+                <button type="button" class="btn btn-animated btn-primary btn-animated-y">
+                  <span class="btn-inner--visible">Paiement</span>
+                  <span class="btn-inner--hidden">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                </button>
+              <% end %>
             </div>
           </div>
         </div>
