@@ -104,8 +104,9 @@
                   <td class="text-right">
                     <!-- Actions -->
                     <div class="actions ml-3">
-                      <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                      <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "delete"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                         <i class="fas fa-times"></i>
+                      <% end %>
                       </a>
                     </div>
                   </td>
@@ -128,17 +129,11 @@
               </div>
             </div>
             <div class="col-md-6 order-md-1">
-              <button type="button" class="btn btn-animated btn-primary btn-animated-y">
-                <span class="btn-inner--visible">Paiement</span>
-                <span class="btn-inner--hidden">
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-              </button>
-              <%= link_to cart_path(@cart), remote: true, method: "PATCH" do %>
-                <button type="button" class="btn btn-animated btn-light btn-animated-y">
-                  <span class="btn-inner--visible">Mettre à jour mon panier</span>
+              <%= link_to new_cart_charge_path(@cart) do %>
+                <button type="button" class="btn btn-animated btn-primary btn-animated-y">
+                  <span class="btn-inner--visible">Paiement</span>
                   <span class="btn-inner--hidden">
-                    <i class="fas fa-check"></i>
+                    <i class="fas fa-shopping-cart"></i>
                   </span>
                 </button>
               <% end %>

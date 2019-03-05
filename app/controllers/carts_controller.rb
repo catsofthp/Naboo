@@ -42,6 +42,7 @@ class CartsController < ApplicationController
     @products = Product.all
     if params[:to_do] == "add" then current_user.cart.add_product(Product.find(params[:product_id])) end
     if params[:to_do] == "remove" then current_user.cart.remove_product(Product.find(params[:product_id])) end
+    if params[:to_do] == "delete" then current_user.cart.products.where(id: params[:product_id]).count.times {current_user.cart.remove_product(Product.find(params[:product_id]))} end
     redirect_to cart_path(@cart)
   end
 
