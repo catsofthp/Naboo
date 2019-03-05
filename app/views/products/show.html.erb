@@ -51,16 +51,14 @@
                 </div>
                 <div class="col-sm-6 text-sm-right">
                   <!-- Add to cart -->
-                  <button type="button" class="btn btn-primary btn-icon">
-
-                    <% if user_signed_in? %>
-                        <%= link_to 'Add to cart', product_carts_path(@product.id), remote: true, method: "POST", class: "btn-inner--text" %>
-                    <% else %>
-                      <%= link_to "Please log in to purchase", new_user_session_path, class: "btn-inner--text" %>
+                  <% if user_signed_in? %>
+                    <%= link_to product_carts_path(@product.id), remote: true, method: "POST" do %>
+                      <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
                     <% end %>
-                    <span class="btn-inner--icon"><i class="fas fa-shopping-bag"></i></span>
-                  </button>
-
+                  <% else %>
+                    <%= link_to "Please log in to purchase", new_user_session_path, class: "class='btn btn-primary btn-icon'" %>
+                  <% end %>
+                  <div id="notice-area"></div>
                 </div>
               </div>
             </div>

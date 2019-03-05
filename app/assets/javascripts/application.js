@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require jquery3
+//= require jquery_ujs
+//= require_tree
 
 //= require assets/js/purpose.core.js
 //= require assets/libs/swiper/dist/js/swiper.min.js
@@ -21,3 +22,5 @@
 //= require assets/js/demo.js
 //= require assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js
 //= require assets/libs/swiper/dist/js/swiper.min.js
+
+//= require cart_scripts
