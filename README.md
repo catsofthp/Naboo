@@ -1,25 +1,7 @@
-# README
+# Admin Account
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you want to try admin panel to create or edit a product please use :
 
-Things you may want to cover:
+login : nabooadmin@yopmail.com 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# boilerplate-purpose
+password : 123456
