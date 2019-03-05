@@ -51,7 +51,7 @@
               <th scope="col" class="sort" data-sort="product">Espèce</th>
               <th scope="col" class="sort" data-sort="price">Prix</th>
               <th scope="col" class="sort" data-sort="size">Vivant</th>
-              <th scope="col">Quantité</th> 
+              <th scope="col">Quantité</th>
               <th scope="col" class="sort" data-sort="total">Total</th>
               <th scope="col"></th>
             </tr>
@@ -119,12 +119,14 @@
                   <i class="fas fa-shopping-cart"></i>
                 </span>
               </button>
-              <button type="button" class="btn btn-animated btn-light btn-animated-y">
-                <span class="btn-inner--visible">Mettre à jour mon panier</span>
-                <span class="btn-inner--hidden">
-                  <i class="fas fa-check"></i>
-                </span>
-              </button>
+              <% link_to cart_path(@cart), remote: true, method: "PATCH" do %>
+                <button type="button" class="btn btn-animated btn-light btn-animated-y">
+                  <span class="btn-inner--visible">Mettre à jour mon panier</span>
+                  <span class="btn-inner--hidden">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </button>
+              <% end %>
             </div>
           </div>
         </div>
