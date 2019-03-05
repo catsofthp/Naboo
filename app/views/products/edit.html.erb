@@ -1,10 +1,13 @@
 <h1>Editing Product</h1>
 
 <%= render 'form', product: @product %>
+
 <h3>Changer d'image ?</h3>
+
 <%= form_tag product_avatars_path(@product), multipart: true do %>
-  <%= file_field_tag :avatar %>
+  <%= file_field_tag :avatar, class:"custom-input-file" %>
   <%= submit_tag "mettre à jour" %>
 <% end %>
+
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>
