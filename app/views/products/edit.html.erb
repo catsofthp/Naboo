@@ -1,7 +1,7 @@
 <h1>Editing Product</h1>
 
 <%= render 'form', product: @product %>
-<h3>Changer d'avatar ?</h3>
+<h3>Changer d'image ?</h3>
 <%= form_tag product_avatars_path(@product), multipart: true do %>
   <%= file_field_tag :avatar %>
   <%= submit_tag "mettre à jour" %>
