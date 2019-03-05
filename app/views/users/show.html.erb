@@ -1,0 +1,14 @@
+<%= link_to 'EDIT PROFILE', edit_user_path(@user), class: "btn btn-default btn-info" %>
+<%= link_to 'BACK TO EVENT', root_path, class: "btn btn-default btn-primary" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Encrypted password:</strong>
+  <%= @user.encrypted_password %>
+</p>

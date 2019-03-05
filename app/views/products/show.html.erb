@@ -5,10 +5,13 @@
         <div class="col-lg-6">
           <div data-toggle="sticky" data-sticky-offset="30">
             <a href="../../assets/img/theme/light/shop-product-lg-2.jpg" data-fancybox>
-              <img alt="Image placeholder" src="<%= @product.image_url %>" class="img-fluid">
             </a>
             <div class="mt-4 text-center">
-              <a href="../../assets/img/theme/light/shop-product-lg-2.jpg" data-fancybox>View gallery</a>
+              <%if @product.avatar.attached?%>
+                <%= image_tag(@product.avatar, alt: 'avatar', :class => "img-fluid") %>
+              <%else%>
+                <img alt="Image placeholder" src="<%= @product.image_url %>" class="img-fluid">
+              <%end%>
             </div>
           </div>
         </div>
@@ -29,7 +32,7 @@
                 <div class="col-6 text-right">
                   <ul class="list-inline mb-0">
                     <li class="list-inline-item">
-                      <span class="badge badge-pill badge-soft-info">ID: #548970</span>
+                      <span class="badge badge-pill badge-soft-info">ID #<%=@product.id %></span>
                     </li>
                     <li class="list-inline-item">
                       <span class="badge badge-pill badge-soft-success">In stock</span>
@@ -47,7 +50,6 @@
               <div class="row align-items-center">
                 <div class="col-sm-6 mb-4 mb-sm-0">
                   <span class="d-block h3 mb-0"><%= @product.price %> €</span>
-                  <a href="#" class="text-sm">Choose a financing option</a>
                 </div>
                 <div class="col-sm-6 text-sm-right">
                   <!-- Add to cart -->
