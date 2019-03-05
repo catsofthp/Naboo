@@ -1,4 +1,6 @@
 class ChargesController < ApplicationController
+	after_action :process_order, only: [:create]
+
 	def new
 	end
 
@@ -23,4 +25,12 @@ class ChargesController < ApplicationController
 	  flash[:error] = e.message
 	  redirect_to new_charge_path
 	end
+
+	def process_order
+		@cart = Cart.find(params[:cart_id])
+		order = Order.create!(user: current_user)
+		@cart.products.each { |product| OrderProduct.create(order: order, product: product) }
+		@cart.destroy
+	end
+
 end
