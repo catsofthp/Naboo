@@ -58,7 +58,7 @@
           </thead>
           <tbody class="list">
             <% @products.each do |product| %>
-              <% if current_user.cart.products.includes(product) %>
+              <% if current_user.cart.products.include?(product) %>
                 <tr>
                   <th scope="row">
                     <div class="media align-items-center">
