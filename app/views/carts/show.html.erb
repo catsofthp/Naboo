@@ -1,299 +1,286 @@
-<% 
-=begin %>  
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @cart.user %>
-</p>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
-
-=end %>
-
-  <div class="main-content">
-    <!-- Header (account) -->
-    <header class="header-account-page bg-primary d-flex align-items-end">
-      <!-- Header container -->
-      <div class="container">
-        <div class="row">
-          <div class=" col-lg-12">
-            <!-- Salute + Small stats -->
-            <div class="row align-items-center mb-4">
-              <div class="col-md-5 mb-4 mb-md-0">
-                <span class="h2 mb-0 text-white d-block">Morning Heather</span>
-                <span class="text-white">Have a nice day!</span>
-              </div>
+<div class="main-content">
+  <!-- Header (account) -->
+  <header class="header-account-page bg-primary d-flex align-items-end">
+    <!-- Header container -->
+    <div class="container">
+      <div class="row">
+        <div class=" col-lg-12">
+          <!-- Salute + Small stats -->
+          <div class="row align-items-center mb-4">
+            <div class="col-md-5 mb-4 mb-md-0">
+              <span class="h2 mb-0 text-white d-block">Morning Heather</span>
+              <span class="text-white">Have a nice day!</span>
             </div>
-            <!-- Account navigation -->
-            <div class="d-flex">
-              <div class="btn-group btn-group-nav shadow" role="group" aria-label="Basic example">
-                <div class="btn-group" role="group">
-                  <a href="checkout-cart.html" class="btn btn-white btn-icon">
-                    <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
-                    <span class="btn-inner--text d-none d-md-inline-block">Cart</span>
-                  </a>
-                  <a href="checkout-customer.html" class="btn btn-white btn-icon">
-                    <span class="btn-inner--icon"><i class="fas fa-user"></i></span>
-                    <span class="btn-inner--text d-none d-md-inline-block">Customer</span>
-                  </a>
-                  <a href="checkout-shipping.html" class="btn btn-white btn-icon">
-                    <span class="btn-inner--icon"><i class="fas fa-truck"></i></span>
-                    <span class="btn-inner--text d-none d-md-inline-block">Shipping</span>
-                  </a>
-                  <a href="checkout-payment.html" class="btn btn-white btn-icon">
-                    <span class="btn-inner--icon"><i class="fas fa-credit-card"></i></span>
-                    <span class="btn-inner--text d-none d-md-inline-block">Payment</span>
-                  </a>
-                </div>
+          </div>
+          <!-- Account navigation -->
+          <div class="d-flex">
+            <div class="btn-group btn-group-nav shadow" role="group" aria-label="Basic example">
+              <div class="btn-group" role="group">
+                <a href="checkout-cart.html" class="btn btn-white btn-icon">
+                  <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
+                  <span class="btn-inner--text d-none d-md-inline-block">Cart</span>
+                </a>
+                <a href="checkout-customer.html" class="btn btn-white btn-icon">
+                  <span class="btn-inner--icon"><i class="fas fa-user"></i></span>
+                  <span class="btn-inner--text d-none d-md-inline-block">Customer</span>
+                </a>
+                <a href="checkout-shipping.html" class="btn btn-white btn-icon">
+                  <span class="btn-inner--icon"><i class="fas fa-truck"></i></span>
+                  <span class="btn-inner--text d-none d-md-inline-block">Shipping</span>
+                </a>
+                <a href="checkout-payment.html" class="btn btn-white btn-icon">
+                  <span class="btn-inner--icon"><i class="fas fa-credit-card"></i></span>
+                  <span class="btn-inner--text d-none d-md-inline-block">Payment</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </header>
-    <section class="slice slice-lg">
-      <div class="container">
-        <!-- Shopping cart table -->
-        <div class="table-responsive">
-          <table class="table table-cards align-items-center">
-            <thead>
-              <tr>
-                <th scope="col" class="sort" data-sort="product">Product</th>
-                <th scope="col" class="sort" data-sort="price">Price</th>
-                <th scope="col" class="sort" data-sort="size">Size</th>
-                <th scope="col">Quantity</th>
-                <th scope="col" class="sort" data-sort="total">Total</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="list">
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <img alt="Image placeholder" src="../../assets/img/theme/light/product-1.png" class="" style="width: 80px;">
-                    <div class="media-body pl-3">
-                      <div class="lh-100">
-                        <span class="text-dark font-weight-bold mb-0">Home Base</span>
-                      </div>
-                      <span class="font-weight-bold text-muted">Size: 42</span>
+    </div>
+  </header>
+  <section class="slice slice-lg">
+    <div class="container">
+      <!-- Shopping cart table -->
+      <div class="table-responsive">
+        <table class="table table-cards align-items-center">
+          <thead>
+            <tr>
+              <th scope="col" class="sort" data-sort="product">Product</th>
+              <th scope="col" class="sort" data-sort="price">Price</th>
+              <th scope="col" class="sort" data-sort="size">Size</th>
+              <th scope="col">Quantity</th>
+              <th scope="col" class="sort" data-sort="total">Total</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <img alt="Image placeholder" src="../../assets/img/theme/light/product-1.png" class="" style="width: 80px;">
+                  <div class="media-body pl-3">
+                    <div class="lh-100">
+                      <span class="text-dark font-weight-bold mb-0">Home Base</span>
                     </div>
+                    <span class="font-weight-bold text-muted">Size: 42</span>
                   </div>
-                </th>
-                <td class="price">
-                  $129 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-"></i>
-                    <span class="status">42</span>
-                  </span>
-                </td>
-                <td>
-                  <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
-                </td>
-                <td class="total">
-                  $129 USD
-                </td>
-                <td class="text-right">
-                  <!-- Actions -->
-                  <div class="actions ml-3">
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
-                      <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
-                      <i class="fas fa-times"></i>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="table-divider"></tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <img alt="Image placeholder" src="../../assets/img/theme/light/product-2.png" class="" style="width: 80px;">
-                    <div class="media-body pl-3">
-                      <div class="lh-100">
-                        <span class="text-dark font-weight-bold mb-0">Home Controller</span>
-                      </div>
-                      <span class="font-weight-bold text-muted">Size: M</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="price">
-                  $49 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-"></i>
-                    <span class="status">M</span>
-                  </span>
-                </td>
-                <td>
-                  <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="3">
-                </td>
-                <td class="total">
-                  $147 USD
-                </td>
-                <td class="text-right">
-                  <!-- Actions -->
-                  <div class="actions ml-3">
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
-                      <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
-                      <i class="fas fa-times"></i>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="table-divider"></tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <img alt="Image placeholder" src="../../assets/img/theme/light/product-3.png" class="" style="width: 80px;">
-                    <div class="media-body pl-3">
-                      <div class="lh-100">
-                        <span class="text-dark font-weight-bold mb-0">Adapt Earphones</span>
-                      </div>
-                      <span class="font-weight-bold text-muted">Size: L</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="price">
-                  $65 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-"></i>
-                    <span class="status">L</span>
-                  </span>
-                </td>
-                <td>
-                  <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
-                </td>
-                <td class="total">
-                  $65 USD
-                </td>
-                <td class="text-right">
-                  <!-- Actions -->
-                  <div class="actions ml-3">
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
-                      <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
-                      <i class="fas fa-times"></i>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="table-divider"></tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <img alt="Image placeholder" src="../../assets/img/theme/light/product-4.png" class="" style="width: 80px;">
-                    <div class="media-body pl-3">
-                      <div class="lh-100">
-                        <span class="text-dark font-weight-bold mb-0">Smart Pixel 3</span>
-                      </div>
-                      <span class="font-weight-bold text-muted">Size: 40</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="price">
-                  $299 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-"></i>
-                    <span class="status">40</span>
-                  </span>
-                </td>
-                <td>
-                  <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
-                </td>
-                <td class="total">
-                  $299 USD
-                </td>
-                <td class="text-right">
-                  <!-- Actions -->
-                  <div class="actions ml-3">
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
-                      <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
-                      <i class="fas fa-times"></i>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="table-divider"></tr>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">
-                    <img alt="Image placeholder" src="../../assets/img/theme/light/product-5.png" class="" style="width: 80px;">
-                    <div class="media-body pl-3">
-                      <div class="lh-100">
-                        <span class="text-dark font-weight-bold mb-0">TV Chromecast</span>
-                      </div>
-                      <span class="font-weight-bold text-muted">Size: L</span>
-                    </div>
-                  </div>
-                </th>
-                <td class="price">
-                  $39 USD
-                </td>
-                <td>
-                  <span class="badge badge-dot mr-4">
-                    <i class="bg-"></i>
-                    <span class="status">L</span>
-                  </span>
-                </td>
-                <td>
-                  <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="2">
-                </td>
-                <td class="total">
-                  $78 USD
-                </td>
-                <td class="text-right">
-                  <!-- Actions -->
-                  <div class="actions ml-3">
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
-                      <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
-                      <i class="fas fa-times"></i>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- Cart information -->
-        <div class="card mt-5 bg-secondary">
-          <div class="card-body">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-md-6 order-md-2 mb-4 mb-md-0">
-                <div class="d-flex align-items-center justify-content-md-end">
-                  <span class="h6 text-muted d-inline-block mr-3 mb-0">Total value:</span>
-                  <span class="h4 mb-0">$450.85 USD</span>
                 </div>
+              </th>
+              <td class="price">
+                $129 USD
+              </td>
+              <td>
+                <span class="badge badge-dot mr-4">
+                  <i class="bg-"></i>
+                  <span class="status">42</span>
+                </span>
+              </td>
+              <td>
+                <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
+              </td>
+              <td class="total">
+                $129 USD
+              </td>
+              <td class="text-right">
+                <!-- Actions -->
+                <div class="actions ml-3">
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                    <i class="fas fa-times"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="table-divider"></tr>
+            <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <img alt="Image placeholder" src="../../assets/img/theme/light/product-2.png" class="" style="width: 80px;">
+                  <div class="media-body pl-3">
+                    <div class="lh-100">
+                      <span class="text-dark font-weight-bold mb-0">Home Controller</span>
+                    </div>
+                    <span class="font-weight-bold text-muted">Size: M</span>
+                  </div>
+                </div>
+              </th>
+              <td class="price">
+                $49 USD
+              </td>
+              <td>
+                <span class="badge badge-dot mr-4">
+                  <i class="bg-"></i>
+                  <span class="status">M</span>
+                </span>
+              </td>
+              <td>
+                <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="3">
+              </td>
+              <td class="total">
+                $147 USD
+              </td>
+              <td class="text-right">
+                <!-- Actions -->
+                <div class="actions ml-3">
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                    <i class="fas fa-times"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="table-divider"></tr>
+            <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <img alt="Image placeholder" src="../../assets/img/theme/light/product-3.png" class="" style="width: 80px;">
+                  <div class="media-body pl-3">
+                    <div class="lh-100">
+                      <span class="text-dark font-weight-bold mb-0">Adapt Earphones</span>
+                    </div>
+                    <span class="font-weight-bold text-muted">Size: L</span>
+                  </div>
+                </div>
+              </th>
+              <td class="price">
+                $65 USD
+              </td>
+              <td>
+                <span class="badge badge-dot mr-4">
+                  <i class="bg-"></i>
+                  <span class="status">L</span>
+                </span>
+              </td>
+              <td>
+                <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
+              </td>
+              <td class="total">
+                $65 USD
+              </td>
+              <td class="text-right">
+                <!-- Actions -->
+                <div class="actions ml-3">
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                    <i class="fas fa-times"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="table-divider"></tr>
+            <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <img alt="Image placeholder" src="../../assets/img/theme/light/product-4.png" class="" style="width: 80px;">
+                  <div class="media-body pl-3">
+                    <div class="lh-100">
+                      <span class="text-dark font-weight-bold mb-0">Smart Pixel 3</span>
+                    </div>
+                    <span class="font-weight-bold text-muted">Size: 40</span>
+                  </div>
+                </div>
+              </th>
+              <td class="price">
+                $299 USD
+              </td>
+              <td>
+                <span class="badge badge-dot mr-4">
+                  <i class="bg-"></i>
+                  <span class="status">40</span>
+                </span>
+              </td>
+              <td>
+                <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="1">
+              </td>
+              <td class="total">
+                $299 USD
+              </td>
+              <td class="text-right">
+                <!-- Actions -->
+                <div class="actions ml-3">
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                    <i class="fas fa-times"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="table-divider"></tr>
+            <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <img alt="Image placeholder" src="../../assets/img/theme/light/product-5.png" class="" style="width: 80px;">
+                  <div class="media-body pl-3">
+                    <div class="lh-100">
+                      <span class="text-dark font-weight-bold mb-0">TV Chromecast</span>
+                    </div>
+                    <span class="font-weight-bold text-muted">Size: L</span>
+                  </div>
+                </div>
+              </th>
+              <td class="price">
+                $39 USD
+              </td>
+              <td>
+                <span class="badge badge-dot mr-4">
+                  <i class="bg-"></i>
+                  <span class="status">L</span>
+                </span>
+              </td>
+              <td>
+                <input type="text" class="form-control form-control-sm text-center" style="width: 80px;" value="2">
+              </td>
+              <td class="total">
+                $78 USD
+              </td>
+              <td class="text-right">
+                <!-- Actions -->
+                <div class="actions ml-3">
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Quick view">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Move to trash">
+                    <i class="fas fa-times"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Cart information -->
+      <div class="card mt-5 bg-secondary">
+        <div class="card-body">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+              <div class="d-flex align-items-center justify-content-md-end">
+                <span class="h6 text-muted d-inline-block mr-3 mb-0">Total value:</span>
+                <span class="h4 mb-0">$450.85 USD</span>
               </div>
-              <div class="col-md-6 order-md-1">
-                <button type="button" class="btn btn-animated btn-primary btn-animated-y">
-                  <span class="btn-inner--visible">Checkout</span>
-                  <span class="btn-inner--hidden">
-                    <i class="fas fa-shopping-cart"></i>
-                  </span>
-                </button>
-                <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Return to shop</a>
-              </div>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <button type="button" class="btn btn-animated btn-primary btn-animated-y">
+                <span class="btn-inner--visible">Checkout</span>
+                <span class="btn-inner--hidden">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+              </button>
+              <a href="shop-landing.html" class="btn btn-link text-sm text-dark font-weight-bold">Return to shop</a>
+              <%= link_to 'Edit', edit_cart_path(@cart) %>
+              <%= link_to 'Back', carts_path %>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+</div>

@@ -28,14 +28,8 @@
               <p class="text-sm">
                 <%= product.description %>
               </p>
-              <span class="card-price"><%= product.price %> €</span>
-              <div class="product-colors mt-3">
-                <a href="#" style="background-color: #59ad46;" data-toggle="tooltip" data-original-title="Green"></a>
-                <a href="#" style="background-color: #04050a;" data-toggle="tooltip" data-original-title="Black"></a>
-                <a href="#" style="background-color: #62aedd;" data-toggle="tooltip" data-original-title="Blueish"></a>
-                <a href="#" style="background-color: #e84385;" data-toggle="tooltip" data-original-title="Pink"></a>
-              </div>
-              <%= link_to 'Voir le chaton', product, class: "btn btn-primary btn-icon" %>
+              <span class="card-price"><%= product.price %> €</span><br>
+              <%= link_to 'Voir le chaton', product, class: "btn btn-outline-info btn-sm" %>
             </div>
             <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
               <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
@@ -52,7 +46,7 @@
     </div>
   </section>
 
-  <section class="slice slice-xl bg-cover bg-size--cover" style="background-image: url(../../assets/img/backgrounds/img-17.jpg); background-position: center center;">
+  <section class="slice slice-xl bg-cover bg-size--cover" style="background-image: url(https://images.pexels.com/photos/417005/pexels-photo-417005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-position: center center;">
     <span class="mask bg-dark opacity-2"></span>
     <div class="container py-6">
       <div class="row justify-content-center">
