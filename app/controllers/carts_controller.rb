@@ -39,8 +39,8 @@ class CartsController < ApplicationController
   # LES NOTICE / FLASH NE MARCHENT PAS. A ADAPTER A AJAX
 
   def update
-    if params[:action] == "add" then add_product end
-    if params[:action] == "remove" then remove_product end
+    if params[:action] == "add" then current_user.cart.add_product(Product.find(params[:product_id])) end
+    if params[:action] == "remove" then current_user.cart.remove_product(Product.find(params[:product_id])) end
     render :show
   end
 
@@ -52,14 +52,6 @@ class CartsController < ApplicationController
       format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def add_product
-    CartProduct.create!(cart: current_user.cart, product: params[:product_id])
-  end
-  
-  def remove_product
-    CartProduct.where({cart: current_user.cart, product: params[:product_id]}).destroy
   end
 
   def add_product_to_cart_from_product_page
