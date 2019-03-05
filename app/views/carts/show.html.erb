@@ -81,7 +81,22 @@
                     </span>
                   </td>
                   <td>
-                    <input name="<%= product.id %>_quantity" type="text" class="form-control form-control-sm text-center" style="width: 80px;" value=<%= current_user.cart.products.where(id: product.id).count %>>
+                    <span class="badge badge-dot ml-3">
+                      <i class="bg-"></i>
+                      <span class="status"><%= current_user.cart.products.where(id: product.id).count %></span>
+                    </span>
+                    <div class="row">
+                      <div class="actions ml-3">
+                        <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
+                          <i class="fas fa-minus"></i>
+                        <% end %>
+                      </div>
+                      <div class="actions ml-3">
+                        <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
+                          <i class="fas fa-plus"></i>
+                        <% end %>
+                      </div>
+                    </div>
                   </td>
                   <td class="total">
                     <%= current_user.cart.products.where(id: product.id).count * product.price %> €
