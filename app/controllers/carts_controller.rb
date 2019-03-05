@@ -39,16 +39,8 @@ class CartsController < ApplicationController
   # LES NOTICE / FLASH NE MARCHENT PAS. A ADAPTER A AJAX
 
   def update
-    @products = []
-    Product.all.each { |product| if current_user.cart.products.include?(product) == true then @products << product end }
-    @products.each { |product|
-      CartProduct.where(["cart_id = ? and product_id = ?", current_user.cart.id, product.id]).destroy_all;
-      params[:"#{product.id}_quantity"].to_i.times { CartProduct.create!(cart: current_user.cart, product: product) }
-    puts "X_X"*50
-      puts params
-    puts params[:"#{product.id}_quantity"]
-    }
-
+    if params[:action] == "add" then current_user.cart.add_product(Product.find(params[:product_id])) end
+    if params[:action] == "remove" then current_user.cart.remove_product(Product.find(params[:product_id])) end
     render :show
   end
 
