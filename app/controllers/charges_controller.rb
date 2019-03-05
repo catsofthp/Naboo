@@ -3,12 +3,14 @@ class ChargesController < ApplicationController
 	protect_from_forgery
 
 	def new
+		@cart = Cart.find(params[:cart_id])
+	  @amount = @cart.payable_amount
 	end
 
 	def create
 		# Amount in cents
 		@cart = Cart.find(params[:cart_id])
-	  @amount = @cart.payable_amount*100
+	  @amount = @cart.payable_amount
 
 	  customer = Stripe::Customer.create({
 	    email: params[:stripeEmail],
@@ -30,7 +32,7 @@ class ChargesController < ApplicationController
 	def process_order
 		@cart = Cart.find(params[:cart_id])
 		order = Order.create!(user: current_user)
-		@cart.products.each { |product| OrderProduct.create(order: order, product: product) }
+		@cart.products.each { |product| OrderProduct.create!(order: order, product: product) }
 		@cart.destroy
 	end
 

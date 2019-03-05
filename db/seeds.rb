@@ -82,3 +82,5 @@ descriptions = [
 20.times do |i|
   Product.create!(title: titles[i], description: titles[i]+descriptions[i], price: rand(0..99)+0.99, image_url: images[i])
 end
+
+admin = User.create!(email: "nabooadmin@yopmail.com", encrypted_password: "$2a$11$jDMjq5DS.mLhhAUQTXLQjOKFtUHNpwubEtbyiL/G49I2C1uY4GjSu", is_admin: "1")

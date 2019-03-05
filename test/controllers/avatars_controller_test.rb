@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AvatarControllerTest < ActionDispatch::IntegrationTest
+class AvatarsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

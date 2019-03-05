@@ -12,7 +12,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @products = Product.all
-    @product_id = Product.find(params[:id])
+    @product = Product.find(params[:id])
+
   end
 
   # GET /products/new
@@ -77,5 +78,11 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :description, :price, :image_url)
+    end
+    def is_owner?
+      if current_user.is_admin =! 1
+        flash[:error] = "Tu ne peux pas accéder à une page qui ne t'appartient pas"
+        redirect_to root_path
+      end
     end
 end
