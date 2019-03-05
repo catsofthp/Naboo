@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-  after_action :add_product_to_cart, only: [:create]
-  respond_to :html, :js
+  after_action :add_product_to_cart_from_product_page, only: [:create]
 
   # GET /carts
   # GET /carts.json
@@ -29,6 +28,7 @@ class CartsController < ApplicationController
     if current_user.cart == nil
       @cart = Cart.create!(user: current_user)
     end
+    redirect_to product_path(params[:product_id])
   end
 
   # PATCH/PUT /carts/1
@@ -49,7 +49,7 @@ class CartsController < ApplicationController
     end
   end
 
-  def add_product_to_cart
+  def add_product_to_cart_from_product_page
     CartProduct.create!(cart: current_user.cart, product: Product.find(params[:product_id]))
   end
 
