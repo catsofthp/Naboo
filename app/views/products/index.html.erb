@@ -1,188 +1,132 @@
-  <!-- Omnisearch -->
-  <div id="omnisearch" class="omnisearch">
+<div class="main-content">
+  <!-- Header -->
+  <section class="slice slice-xl bg-cover bg-size--cover" data-offset-top="#header-main" style="background-image: url(../../assets/img/backgrounds/img-16.jpg); background-position: center center;">
+    <span class="mask bg-dark opacity-3"></span>
+    <div class="container py-6">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2 class="h1 text-white">Home Accessories</h2>
+          <ol class="breadcrumb breadcrumb-links breadcrumb-dark px-0 justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="#" class="">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" class="text-normal">Shop</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" class="text-normal">Home Accessories</a>
+            </li>
+          </ol>
+          <p class="lead text-white mt-4">There is only that moment and the incredible certainty that everything under the sun has been written by one hand only.</p>
+          <a href="#" class="btn btn-white rounded-pill mt-4 shadow hover-shadow-lg hover-translate-y-n3">Start shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="slice slice-lg delimiter-bottom" id="sct-products">
     <div class="container">
-      <!-- Search form -->
-      <form class="omnisearch-form">
-        <div class="form-group">
-          <div class="input-group input-group-merge input-group-flush">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-search"></i></span>
+      <div class="row">
+        <% @products.each do |product| %>
+        <div class="col-md-4 mb-4">
+          <div class="card card-product">
+            <div class="card-image">
+              <img alt="Image placeholder" src="<%= product.image_url %>" class="img-center img-fluid">
             </div>
-            <input type="text" class="form-control" placeholder="Type and hit enter ...">
+            <div class="card-body text-center pt-0">
+              <h6><a href="#"><%= product.title %></a></h6>
+              <p class="text-sm">
+                <%= product.description %>
+              </p>
+              <span class="card-price"><%= product.price %> €</span>
+              <div class="product-colors mt-3">
+                <a href="#" style="background-color: #59ad46;" data-toggle="tooltip" data-original-title="Green"></a>
+                <a href="#" style="background-color: #04050a;" data-toggle="tooltip" data-original-title="Black"></a>
+                <a href="#" style="background-color: #62aedd;" data-toggle="tooltip" data-original-title="Blueish"></a>
+                <a href="#" style="background-color: #e84385;" data-toggle="tooltip" data-original-title="Pink"></a>
+              </div>
+              <%= link_to 'Voir le chaton', product, class: "btn btn-primary btn-icon" %>
+            </div>
+            <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
+              <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
+                <i class="fas fa-shopping-bag"></i>
+              </button>
+              <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
           </div>
         </div>
-      </form>
-      <div class="omnisearch-suggestions">
-        <h6 class="heading">Search Suggestions</h6>
-        <div class="row">
-          <div class="col-sm-6">
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a class="list-link" href="#">
-                  <i class="fas fa-search"></i>
-                  <span>macbook pro</span> in Laptops
-                </a>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section class="slice slice-xl bg-cover bg-size--cover" style="background-image: url(../../assets/img/backgrounds/img-17.jpg); background-position: center center;">
+    <span class="mask bg-dark opacity-2"></span>
+    <div class="container py-6">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-xl-6 text-center">
+          <div class="mb-5">
+            <h1 class="text-white">Always on time</h1>
+            <p class="lead text-white mt-2">You get all Bootstrap components fully customized. Besides, you receive another numerous plugins out of the box and ready to use.</p>
+          </div>
+          <form>
+            <div class="form-group mb-0">
+              <div class="input-group input-group-lg input-group-merge rounded-pill bg-white">
+                <input type="email" class="form-control form-control-flush" name="email" placeholder="Enter your email address" aria-label="Enter your email address">
+                <div class="input-group-append">
+                  <button class="btn btn-white text-dark" type="button">
+                    <span class="far fa-paper-plane"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="slice-sm bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="px-4 py-3 text-lg-center">
+            <h6 class="text-sm text-white text-uppercase ls-1">Free shipping in 48/72H</h6>
+            <p class="text-white opacity-7">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="px-4 py-3 text-lg-center">
+            <h6 class="text-sm text-white text-uppercase ls-1">Free returns</h6>
+            <p class="text-white opacity-7">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="px-4 py-3 text-lg-center">
+            <h6 class="text-sm text-white text-uppercase ls-1">Secure payment</h6>
+            <ul class="list-inline mt-2">
+              <li class="list-inline-item">
+                <img alt="Image placeholder" src="../../assets/img/icons/cards/visa.png" width="30">
               </li>
-              <li>
-                <a class="list-link" href="#">
-                  <i class="fas fa-search"></i>
-                  <span>iphone 8</span> in Smartphones
-                </a>
+              <li class="list-inline-item">
+                <img alt="Image placeholder" src="../../assets/img/icons/cards/mastercard.png" width="30">
               </li>
-              <li>
-                <a class="list-link" href="#">
-                  <i class="fas fa-search"></i>
-                  <span>macbook pro</span> in Laptops
-                </a>
+              <li class="list-inline-item">
+                <img alt="Image placeholder" src="../../assets/img/icons/cards/maestro.png" width="30">
               </li>
-              <li>
-                <a class="list-link" href="#">
-                  <i class="fas fa-search"></i>
-                  <span>beats pro solo 3</span> in Headphones
-                </a>
-              </li>
-              <li>
-                <a class="list-link" href="#">
-                  <i class="fas fa-search"></i>
-                  <span>smasung galaxy 10</span> in Phones
-                </a>
+              <li class="list-inline-item">
+                <img alt="Image placeholder" src="../../assets/img/icons/cards/paypal.png" width="30">
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="main-content">
-
-    <!-- Header -->
-    <section class="slice slice-xl bg-cover bg-size--cover" data-offset-top="#header-main" style="background-image: url(../../assets/img/backgrounds/img-16.jpg); background-position: center center;">
-      <span class="mask bg-dark opacity-3"></span>
-      <div class="container py-6">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 class="h1 text-white">Home Accessories</h2>
-            <ol class="breadcrumb breadcrumb-links breadcrumb-dark px-0 justify-content-center">
-              <li class="breadcrumb-item">
-                <a href="#" class="">Home</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="#" class="text-normal">Shop</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="#" class="text-normal">Home Accessories</a>
-              </li>
-            </ol>
-            <p class="lead text-white mt-4">There is only that moment and the incredible certainty that everything under the sun has been written by one hand only.</p>
-            <a href="#" class="btn btn-white rounded-pill mt-4 shadow hover-shadow-lg hover-translate-y-n3">Start shopping</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products -->
-    <section class="slice slice-lg delimiter-bottom" id="sct-products">
-        <div class="container">
-          <div class="row">
-              <% @products.each do |product| %>
-              <div class="col-md-4 mb-4">
-                <div class="card card-product">
-                  <div class="card-image">
-                      <img alt="Image placeholder" src="<%= product.image_url %>" class="img-center img-fluid">
-                  </div>
-                  <div class="card-body text-center pt-0">
-                    <h6><a href="#"><%= product.title %></a></h6>
-                    <p class="text-sm">
-                      <%= product.description %>
-                    </p>
-                    <span class="card-price"><%= product.price %> €</span>
-                    <div class="product-colors mt-3">
-                      <a href="#" style="background-color: #59ad46;" data-toggle="tooltip" data-original-title="Green"></a>
-                      <a href="#" style="background-color: #04050a;" data-toggle="tooltip" data-original-title="Black"></a>
-                      <a href="#" style="background-color: #62aedd;" data-toggle="tooltip" data-original-title="Blueish"></a>
-                      <a href="#" style="background-color: #e84385;" data-toggle="tooltip" data-original-title="Pink"></a>
-                    </div>
-                    <%= link_to 'Voir le chaton', product, class: "btn btn-primary btn-icon" %>
-                  </div>
-                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-                      <i class="fas fa-shopping-bag"></i>
-                    </button>
-                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Wishlist">
-                      <i class="fas fa-heart"></i>
-                    </button>
-                  </div>
-                </div>
-                </div>
-              <% end %>
-          </div>
-        </div>
-    </section>
-      
-    <section class="slice slice-xl bg-cover bg-size--cover" style="background-image: url(../../assets/img/backgrounds/img-17.jpg); background-position: center center;">
-      <span class="mask bg-dark opacity-2"></span>
-      <div class="container py-6">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 col-xl-6 text-center">
-            <div class="mb-5">
-              <h1 class="text-white">Always on time</h1>
-              <p class="lead text-white mt-2">You get all Bootstrap components fully customized. Besides, you receive another numerous plugins out of the box and ready to use.</p>
-            </div>
-            <form>
-              <div class="form-group mb-0">
-                <div class="input-group input-group-lg input-group-merge rounded-pill bg-white">
-                  <input type="email" class="form-control form-control-flush" name="email" placeholder="Enter your email address" aria-label="Enter your email address">
-                  <div class="input-group-append">
-                    <button class="btn btn-white text-dark" type="button">
-                      <span class="far fa-paper-plane"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slice-sm bg-primary">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <div class="px-4 py-3 text-lg-center">
-              <h6 class="text-sm text-white text-uppercase ls-1">Free shipping in 48/72H</h6>
-              <p class="text-white opacity-7">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <div class="px-4 py-3 text-lg-center">
-              <h6 class="text-sm text-white text-uppercase ls-1">Free returns</h6>
-              <p class="text-white opacity-7">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="px-4 py-3 text-lg-center">
-              <h6 class="text-sm text-white text-uppercase ls-1">Secure payment</h6>
-              <ul class="list-inline mt-2">
-                <li class="list-inline-item">
-                  <img alt="Image placeholder" src="../../assets/img/icons/cards/visa.png" width="30">
-                </li>
-                <li class="list-inline-item">
-                  <img alt="Image placeholder" src="../../assets/img/icons/cards/mastercard.png" width="30">
-                </li>
-                <li class="list-inline-item">
-                  <img alt="Image placeholder" src="../../assets/img/icons/cards/maestro.png" width="30">
-                </li>
-                <li class="list-inline-item">
-                  <img alt="Image placeholder" src="../../assets/img/icons/cards/paypal.png" width="30">
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+  </section>
+</div>
