@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   after_action :add_product_to_cart_from_product_page, only: [:create]
+  respond_to :html, :js
 
   # GET /carts
   # GET /carts.json
@@ -38,6 +39,7 @@ class CartsController < ApplicationController
   # LES NOTICE / FLASH NE MARCHENT PAS. A ADAPTER A AJAX
 
   def update
+    
   end
 
   # DELETE /carts/1
