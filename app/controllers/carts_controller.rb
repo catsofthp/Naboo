@@ -29,7 +29,6 @@ class CartsController < ApplicationController
     if current_user.cart == nil
       @cart = Cart.create!(user: current_user)
     end
-    puts params
   end
 
   # PATCH/PUT /carts/1
