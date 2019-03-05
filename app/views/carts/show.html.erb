@@ -81,20 +81,20 @@
                     </span>
                   </td>
                   <td>
-                    <span class="badge badge-dot mr-3">
+                    <span class="badge badge-dot ml-3">
                       <i class="bg-"></i>
                       <span class="status"><%= current_user.cart.products.where(id: product.id).count %></span>
                     </span>
                     <div class="row">
                       <div class="actions ml-3">
-                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Delete one item">
+                        <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                           <i class="fas fa-minus"></i>
-                        </a>
+                        <% end %>
                       </div>
                       <div class="actions ml-3">
-                        <a href="#" class="action-item mr-2" data-toggle="tooltip" title="Add one item">
+                        <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                           <i class="fas fa-plus"></i>
-                        </a>
+                        <% end %>
                       </div>
                     </div>
                   </td>
