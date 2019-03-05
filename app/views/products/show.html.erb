@@ -51,77 +51,78 @@
                 </div>
                 <div class="col-sm-6 text-sm-right">
                   <!-- Add to cart -->
-<<<<<<< HEAD
+                  <<<<<<< HEAD
                   <button type="button" class="btn btn-primary btn-icon">
 
                     <% if user_signed_in? %>
                     <%= link_to 'Add to cart', product_carts_path(@product.id), remote: true, method: "POST", class: "btn-inner--text" %>
                     <% else %>
                     <%= link_to "Please log in to purchase", new_user_session_path, class: "btn-inner--text" %>
-=======
-                  <% if user_signed_in? %>
+                    =======
+                    <% if user_signed_in? %>
                     <%= link_to carts_path(:product_id => @product.id), remote: true, method: "POST" do %>
-                      <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
->>>>>>> ba5d73a647a7d3ce5ebb971bc2e346c404257535
+                    <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
+                    >>>>>>> ba5d73a647a7d3ce5ebb971bc2e346c404257535
                     <% end %>
-                  <% else %>
+                    <% else %>
                     <%= link_to "Please log in to purchase", new_user_session_path, class: "class='btn btn-primary btn-icon'" %>
-                  <% end %>
-                  <div id="notice-area"></div>
+                    <% end %>
+                    <div id="notice-area"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="slice slice-lg delimiter-top" id="sct-suggested-products">
-    <div class="container">
-      <div class="mb-5 text-center">
-        <h3 class="h6">Nos chats les plus dociles<i class="fas fa-angle-down text-xs ml-3"></i></h3>
-      </div>
-      <div class="row">
-
-        <% @products.each do |product| %>
-        <div class="col-lg-3 col-sm-6">
-          <div class="card card-product">
-            <div class="card-image">
-              <img alt="Image placeholder" src="<%= product.image_url %>" class="img-center img-fluid">
-            </div>
-            <div class="card-body text-center pt-0">
-              <h6><a href="#"><%= product.title %></a></h6>
-              <span class="card-price"><%= product.price %> €</span><br>
-              <%= link_to 'Voir le chaton', product, class: "btn btn-outline-info btn-sm" %>
-            </div>
-            <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
-              <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
-                <i class="fas fa-shopping-bag"></i>
-              </button>
-              <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Wishlist">
-                <i class="fas fa-heart"></i>
-              </button>
-            </div>
+      <section class="slice slice-lg delimiter-top" id="sct-suggested-products">
+        <div class="container">
+          <div class="mb-5 text-center">
+            <h3 class="h6">Nos chats les plus dociles<i class="fas fa-angle-down text-xs ml-3"></i></h3>
           </div>
-        </div>
-        <% end %>
-  </section>
-
-  <section class="slice slice-xl bg-cover bg-size--cover" style="background-image: url(https://images.pexels.com/photos/96399/pexels-photo-96399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-position: center center;">
-        <span class="mask bg-dark opacity-2"></span>
-        <div class="container py-6">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-xl-7 text-center">
-              <div class="mb-5">
-                <h1 class="text-white">Try a new experience</h1>
-                <p class="lead text-white mt-2">And make our beloved cats happier than ever.</p>
+          <div class="row">
+            <% @products.each do |product| %>
+              <div class="col-lg-3 col-sm-6">
+                <div class="card card-product">
+                  <div class="card-image">
+                    <img alt="Image placeholder" src="<%= product.image_url %>" class="img-center img-fluid">
+                  </div>
+                  <div class="card-body text-center pt-0">
+                    <h6><a href="#"><%= product.title %></a></h6>
+                    <span class="card-price"><%= product.price %> €</span><br>
+                    <%= link_to 'Voir le chaton', product, class: "btn btn-outline-info btn-sm" %>
+                  </div>
+                  <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
+                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Add to cart">
+                      <i class="fas fa-shopping-bag"></i>
+                    </button>
+                    <button type="button" class="action-item" data-toggle="tooltip" data-original-title="Wishlist">
+                      <i class="fas fa-heart"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <a href="#" class="btn btn-white btn-icon rounded-pill shadow hover-shadow-lg hover-translate-y-n3">
-                <span class="btn-inner--text">Get started</span>
-                <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
-              </a>
+            <% end %>
+          </div>
+          </div>
+        </section>
+
+        <section class="slice slice-xl bg-cover bg-size--cover" style="background-image: url(https://images.pexels.com/photos/96399/pexels-photo-96399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-position: center center;">
+          <span class="mask bg-dark opacity-2"></span>
+          <div class="container py-6">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-xl-7 text-center">
+                <div class="mb-5">
+                  <h1 class="text-white">Try a new experience</h1>
+                  <p class="lead text-white mt-2">And make our beloved cats happier than ever.</p>
+                </div>
+                <a href="#" class="btn btn-white btn-icon rounded-pill shadow hover-shadow-lg hover-translate-y-n3">
+                  <span class="btn-inner--text">Get started</span>
+                  <span class="btn-inner--icon"><i class="fas fa-angle-right"></i></span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-  </section>
+        </section>
+</div>
