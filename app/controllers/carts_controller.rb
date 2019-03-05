@@ -50,8 +50,7 @@ class CartsController < ApplicationController
   end
 
   def add_product_to_cart
-    @product = Product.find(params[:product_id])
-    CartProduct.create!(cart: current_user.cart, product: @product)
+    CartProduct.create!(cart: current_user.cart, product: Product.find(params[:product_id]))
   end
 
   private
