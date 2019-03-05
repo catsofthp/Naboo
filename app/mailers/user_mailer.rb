@@ -9,4 +9,9 @@ class UserMailer < ApplicationMailer
          subject: "Thank you for your order")
   end
 
+  def welcome_admin(order)
+    mail(from: "nans.noel@gmail.com", to: "nabooadmin@yopmail.com",
+         subject: "You have received an order")
+  end
+
 end
