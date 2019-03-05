@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-  after_action :add_product_to_cart, only: [:create, :update]
+  after_action :add_product_to_cart, only: [:create]
   respond_to :html, :js
 
   # GET /carts
@@ -26,11 +26,8 @@ class CartsController < ApplicationController
   # POST /carts
   # POST /carts.json
   def create
-    @cart = Cart.new(user: current_user)
-
-    respond_to do |format|
-      @cart.save
-      format.html { redirect_to product_path(params[:product_id]), flash[:success] = "Product added to cart" }
+    if current_user.cart == nil
+      @cart = Cart.create!(user: current_user)
     end
   end
 
@@ -40,8 +37,6 @@ class CartsController < ApplicationController
   # LES NOTICE / FLASH NE MARCHENT PAS. A ADAPTER A AJAX
 
   def update
-    flash[:success] = "Product added to cart"
-    redirect_to product_path(params[:product_id])
   end
 
   # DELETE /carts/1
@@ -56,7 +51,7 @@ class CartsController < ApplicationController
 
   def add_product_to_cart
     @product = Product.find(params[:product_id])
-    CartProduct.create!(cart: @cart, product: @product)
+    CartProduct.create!(cart: current_user.cart, product: @product)
   end
 
   private

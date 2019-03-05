@@ -54,13 +54,9 @@
                   <button type="button" class="btn btn-primary btn-icon">
 
                     <% if user_signed_in? %>
-                    <% if current_user.cart == nil %>
-                    <%= link_to 'Add to bag', product_carts_path(@product.id), method: "POST", class: "btn-inner--text" %>
+                        <%= link_to 'Add to cart', product_carts_path(@product.id), remote: true, method: "POST", class: "btn-inner--text" %>
                     <% else %>
-                    <%= link_to 'Add to bag', product_cart_path(@product.id,current_user.cart.id), remote: true, method: "PUT", class: "btn-inner--text" %>
-                    <% end %>
-                    <% else %>
-                    <%= link_to "Please log in to purchase", new_user_session_path, class: "btn-inner--text" %>
+                      <%= link_to "Please log in to purchase", new_user_session_path, class: "btn-inner--text" %>
                     <% end %>
                     <span class="btn-inner--icon"><i class="fas fa-shopping-bag"></i></span>
                   </button>

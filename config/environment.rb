@@ -4,12 +4,16 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
+=begin
 ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['SENDGRID_LOGIN'], # ENV['GMAIL_LOGIN'] pour envoyer de son adresse perso
-    :password => ENV['SENDGRID_PWD'], # ENV['GMAIL_PWD']
-    :domain => 'shop.fr', # ou 'gmail.com'
-    :address => 'smtp.sendgrid.net',
+    :user_name => ENV['API_KEY'],
+    :password => ENV['SECRET_KEY'],
+    :password => ENV['EMAIL_MAILJET'],
+    :domain => 'localhost',
+    :address => 'in-v3.mailjet.com',
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
 }
+
+=end
