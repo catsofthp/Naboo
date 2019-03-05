@@ -56,7 +56,9 @@
                       <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
                     <% end %>
                   <% else %>
-                    <%= link_to "Please log in to purchase", new_user_session_path, class: "class='btn btn-primary btn-icon'" %>
+                    <%= link_to new_user_session_path do %>
+                      <button type="button" class="btn btn-primary btn-icon"> Please log in to purchase <i class='fas fa-shopping-bag'></i> </button>
+                    <% end %>
                   <% end %>
                     <div id="notice-area"></div>
                   </div>

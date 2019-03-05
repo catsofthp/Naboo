@@ -51,6 +51,7 @@ class CartsController < ApplicationController
 
   def add_product_to_cart_from_product_page
     CartProduct.create!(cart: current_user.cart, product: Product.find(params[:product_id]))
+    flash[:success] = "Product added to cart"
   end
 
   private
