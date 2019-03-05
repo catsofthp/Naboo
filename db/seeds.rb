@@ -84,3 +84,8 @@ descriptions = [
 end
 
 admin = User.create!(email: "nabooadmin@yopmail.com", encrypted_password: "$2a$11$jDMjq5DS.mLhhAUQTXLQjOKFtUHNpwubEtbyiL/G49I2C1uY4GjSu", is_admin: "1")
+
+5.times do
+  order = Order.create!(user: admin)
+  3.times { OrderProduct.create!(order: order, product: Product.all.sample) }
+end
