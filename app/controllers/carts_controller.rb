@@ -39,9 +39,10 @@ class CartsController < ApplicationController
   # LES NOTICE / FLASH NE MARCHENT PAS. A ADAPTER A AJAX
 
   def update
-    if params[:action] == "add" then current_user.cart.add_product(Product.find(params[:product_id])) end
-    if params[:action] == "remove" then current_user.cart.remove_product(Product.find(params[:product_id])) end
-    render :show
+    @products = Product.all
+    if params[:to_do] == "add" then current_user.cart.add_product(Product.find(params[:product_id])) end
+    if params[:to_do] == "remove" then current_user.cart.remove_product(Product.find(params[:product_id])) end
+    redirect_to cart_path(@cart)
   end
 
   # DELETE /carts/1

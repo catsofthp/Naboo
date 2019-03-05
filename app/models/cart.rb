@@ -13,7 +13,9 @@ class Cart < ApplicationRecord
   end
 
   def remove_product(product)
-    CartProduct.where({cart: self, product: product}).destroy
+    if CartProduct.where("cart_id = ? and product_id = ?", self.id, product.id).count >=1
+      CartProduct.where("cart_id = ? and product_id = ?", self.id, product.id)[0].destroy
+    end
   end
   
 end
