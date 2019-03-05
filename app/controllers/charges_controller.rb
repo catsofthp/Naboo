@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
 	after_action :process_order, only: [:create]
+	protect_from_forgery
 
 	def new
 	end
