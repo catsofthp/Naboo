@@ -40,7 +40,7 @@ class CartsController < ApplicationController
 
   def update
     @products = []
-    Product.all.each { |product| if current_user.cart.products.include?(product) == true then @products << product }
+    Product.all.each { |product| if current_user.cart.products.include?(product) == true then @products << product end }
     @products.each { |product|
       CartProduct.where(cart: current_user.cart, product: product).destroy_all
       params[:"#{product.id}_quantity"].to_i.times { CartProduct.create!(cart: current_user.cart, product: product) }
