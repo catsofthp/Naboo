@@ -11,7 +11,11 @@ class CartsController < ApplicationController
     if current_user.cart == nil
       @cart = Cart.create!(user: current_user)
     end
-    redirect_to product_path(params[:product_id])
+    if params[:origin] == "product_page"
+      redirect_to product_path(params[:product_id])
+    else
+      redirect_to products_path
+    end
   end
 
   def update
