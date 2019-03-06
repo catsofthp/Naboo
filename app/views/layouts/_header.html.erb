@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbar-primary">
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#">
+            <a class="nav-link nav-link-icon" href="https://www.instagram.com/cats_of_instagram/">
               <i class="fab fa-instagram"></i>
               <span class="nav-link-inner--text">Instagram</span>
             </a>
@@ -31,7 +31,10 @@
               <% end %>
             <% else %>
               <%= link_to new_user_session_path do %>
-                <button type="button" class="btn btn-primary btn-icon"> Connexion </button>
+                <button type="button" class="btn btn-soft-primary btn-icon btn-sm"> Connexion </button>
+              <% end %>
+              <%= link_to new_user_registration_path, method: "GET" do %>
+                <button type="button" class="btn btn-soft-success btn-icon btn-sm"> Inscription </button>
               <% end %>
             <% end %>
           </li>
