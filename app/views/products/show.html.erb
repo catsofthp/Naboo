@@ -19,7 +19,6 @@
           <div class="pl-lg-5">
             <!-- Product title -->
             <h5 class="h4"><%= @product.title %></h5>
-            <h6 class="text-sm">Processor 256GB Storage</h6>
             <!-- Rating -->
             <div class="row align-items-center">
               <div class="col-6">
@@ -35,7 +34,7 @@
                       <span class="badge badge-pill badge-soft-info">ID #<%=@product.id %></span>
                     </li>
                     <li class="list-inline-item">
-                      <span class="badge badge-pill badge-soft-success">In stock</span>
+                      <span class="badge badge-pill badge-soft-success">En stock</span>
                     </li>
                   </ul>
                 </div>
@@ -55,7 +54,7 @@
                   <!-- Add to cart -->
                   <% if user_signed_in? %>
                     <%= link_to carts_path(:product_id => @product.id), method: "POST", remote: true do %>
-                      <button type="button" class="btn btn-primary btn-icon" id="addToCartBtn"> Add to cart <i class='fas fa-shopping-bag'></i> </button>
+                      <button type="button" class="btn btn-soft-success btn-icon" id="addToCartBtn"> Ajouter au panier <i class='fas fa-shopping-bag'></i> </button>
                     <% end %>
                   <% else %>
                     <%= link_to new_user_session_path do %>
