@@ -1,27 +1,27 @@
 <% if @cart.products.count == 0 %>
 
-<div class="main-content">
   <div class="main-content">
-    <section class="slice slice-xl mh-100vh d-flex align-items-center" data-offset-top="#header-main">
-      <div class="container pt-6 position-relative zindex-100">
-        <div class="row justify-content-center">
-          <div class="col-lg-7">
-            <div class="text-center">
-              <h6 class="h4 my-4">Ton panier est vide.</h6>
-              <p class="px-md-5">
-                Pour afficher un panier, il faudrait commencer par le remplir de chats...
-              </p>
-              <a href="/products" class="btn btn-sm btn-primary btn-icon rounded-pill mt-5">
-                <span class="btn-inner--icon"><i class="fas fa-angle-left"></i></span>
-                <span class="btn-inner--text">Retourner à la boutique</span>
-              </a>
+    <div class="main-content">
+      <section class="slice slice-xl mh-100vh d-flex align-items-center" data-offset-top="#header-main">
+        <div class="container pt-6 position-relative zindex-100">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="text-center">
+                <h6 class="h4 my-4">Ton panier est vide.</h6>
+                <p class="px-md-5">
+                  Pour afficher un panier, il faudrait commencer par le remplir de chats...
+                </p>
+                <a href="/products" class="btn btn-sm btn-primary btn-icon rounded-pill mt-5">
+                  <span class="btn-inner--icon"><i class="fas fa-angle-left"></i></span>
+                  <span class="btn-inner--text">Retourner à la boutique</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
-</div>
 
 <% else %>
 

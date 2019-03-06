@@ -23,4 +23,4 @@
 //= require assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js
 //= require assets/libs/swiper/dist/js/swiper.min.js
 
-//= require orders_script
+//= require orders_scripts
