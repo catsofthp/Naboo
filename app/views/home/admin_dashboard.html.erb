@@ -26,7 +26,7 @@
                     <i class="bg-warning"></i>Prix moyen / commande
                   </span>
                   <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
-                    <%= Order.average_price %> €
+                    <%= Order.average_price.round(2) %> €
                     <small class="fas fa-angle-up text-warning"></small>
                   </a>
                 </li>
@@ -35,7 +35,7 @@
                     <i class="bg-danger"></i>Total Biff earned
                   </span>
                   <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
-                    <%= Order.total_price %> €
+                    <%= Order.total_price.round(2) %> €
                     <small class="fas fa-angle-down text-danger"></small>
                   </a>
                 </li>
