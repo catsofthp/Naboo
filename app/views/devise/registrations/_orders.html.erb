@@ -13,7 +13,7 @@
       <% orders.order("created_at DESC").each do |order| %>
         <tr>
           <div class="orderInUserPage" type="button">
-            <td>
+            <td scope="row">
               <div class="media align-items-center">
                 <div class="media-body pl-3">
                   <div class="lh-100 text-dark font-weight-bold mb-0">
@@ -36,10 +36,15 @@
             </td>
             <td class="text-right"></td>
           </div>
+          
           <!-- PARTIAL DU CONTENU DE L' ORDER -->
-         
+
+          <!-- <div class="collapse"> -->
+            <!-- <%= render 'orderproducts', order: order, products: Product.all.map { |product| if order.products.include?(product) then product end }.compact %> -->
+          <!-- </div> -->
+          
+          <tr class="table-divider"></tr>
         </tr>
-        <tr class="table-divider"></tr>
       <% end %>
     </tbody>
   </table>
