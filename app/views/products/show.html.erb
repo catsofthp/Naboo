@@ -52,11 +52,6 @@
                 </div>
                 <div class="col-sm-6 text-sm-right">
                   <!-- Add to cart -->
-                  <% if current_user.is_admin %>
-                    <%= link_to edit_product_path(@product), method: "GET" do %>
-                      <button type="button" class="btn btn-soft-warning btn-icon btn-sm"> Editer le chaton </button>
-                    <% end %>
-                  <% else %>
                     <% if user_signed_in? %>
                       <%= link_to carts_path(:product_id => @product.id, :origin => "product_page"), method: "POST", remote: true do %>
                         <button type="button" class="btn btn-soft-success btn-icon" id="addToCartBtn"> Ajouter au panier <i class='fas fa-shopping-bag'></i> </button>
@@ -67,7 +62,6 @@
                       <% end %>
                     <% end %>
                       <div id="notice-area"></div>
-                  <% end %>
                   </div>
                 </div>
               </div>
