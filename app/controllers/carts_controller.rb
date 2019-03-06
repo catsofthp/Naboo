@@ -1,10 +1,9 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:show, :update]
   after_action :add_product_to_cart_from_product_page, only: [:create]
   respond_to :html, :js
 
   def show
-    @products = Product.all
   end
 
   def create
@@ -34,6 +33,7 @@ class CartsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_cart
+    @products = Product.all
     @cart = Cart.find_by(user: current_user)
   end
 

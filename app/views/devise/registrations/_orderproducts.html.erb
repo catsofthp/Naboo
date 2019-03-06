@@ -1,5 +1,5 @@
-  <table class="table table-cards align-items-center">
-    <thead>
+
+    <thead class="collapse" id="order<%=order.id%>Title">
       <tr>
         <th scope="col" class="sort" data-sort="product">Espèce</th>
         <th scope="col" class="sort" data-sort="price">Prix</th>
@@ -9,10 +9,10 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody class="list">
+    <tbody class="list collapse" id="order<%=order.id%>Content">
       <% products.each do |product| %>
         <tr>
-          <td>
+          <th scope="row">
             <div class="media align-items-center">
               <img alt="Image placeholder" src="<%= product.image_url %>" class="" style="width: 80px;">
               <div class="media-body pl-3">
@@ -21,7 +21,7 @@
                 </div>
               </div>
             </div>
-          </td>
+          </th>
           <td class="price">
             <%= product.price %> €
           </td>
@@ -45,4 +45,3 @@
         </tr>
       <% end %>
     </tbody>
-  </table>
