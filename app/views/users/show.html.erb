@@ -7,8 +7,8 @@
             <!-- Salute + Small stats -->
             <div class="row align-items-center mb-4">
               <div class="col-md-5 mb-4 mb-md-0">
-                <span class="h2 mb-0 text-white d-block">Morning, Heather</span>
-                <span class="text-white">Have a nice day!</span>
+                <span class="h2 mb-0 text-white d-block">Hello, <%= @user.first_name %></span>
+                <span class="text-white">Comment chat va ?</span>
               </div>
               <div class="col-auto flex-fill d-none d-xl-block">
                 <ul class="list-inline row justify-content-lg-end mb-0">
@@ -64,14 +64,14 @@
                   <div class="col-lg-8">
                     <div class="media align-items-center">
                       <div class="media-body">
-                        <h5 class="text-white mb-0">Heather Wright</h5>
+                        <h5 class="text-white mb-0"> Profil </h5>
                       </div>
                     </div>
                   </div>
                   <div class="col-auto flex-fill mt-4 mt-sm-0 text-sm-right d-none d-lg-block">
                     <a href="/products" class="btn btn-sm btn-white rounded-pill btn-icon shadow">
                       <span class="btn-inner--icon"><i class="fas fa-fire"></i></span>
-                      <span class="btn-inner--text">Commencer mon shopping</span>
+                      <span class="btn-inner--text">Continuer mon shopping</span>
                     </a>
                   </div>
                 </div>
@@ -87,16 +87,27 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="form-control-label">Email</label>
-                    <input class="form-control" type="email" placeholder="<%= @user.email %>">
-                    <small class="form-text text-muted mt-2">Il s'agit de l'adresse à laquelle nous t'enverrons quelques nouvelles relatives à ton profil et à tes commandes de chatons. </small>
+                    <p class="text-sm text-muted mb-0"><%= @user.email %></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Mot de passe crypté</label>
+                    <p class="text-sm text-muted mb-0"><%= @user.encrypted_password %></p>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="form-control-label">Mot de passe crypté</label>
-                    <input class="form-control" type="text" placeholder="<%= @user.encrypted_password %>">
+                    <label class="form-control-label">Prénom</label>
+                    <p class="text-sm text-muted mb-0"><%= @user.first_name %></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Nom</label>
+                    <p class="text-sm text-muted mb-0"><%= @user.last_name %></p>
                   </div>
                 </div>
               </div>

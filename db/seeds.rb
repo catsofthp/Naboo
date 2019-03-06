@@ -83,7 +83,7 @@ descriptions = [
   Product.create!(title: titles[i], description: titles[i]+descriptions[i], price: rand(0..99)+0.99, image_url: images[i])
 end
 
-admin = User.create!({email: 'nabooadmin@yopmail.com',password: '123456', password_confirmation: '123456', is_admin:'1'})
+admin = User.create!({first_name: 'Naboo', last_name: 'Admin', email: 'nabooadmin@yopmail.com', password: '123456', password_confirmation: '123456', is_admin:'1'})
 
 5.times do
   order = Order.create!(user: admin)
