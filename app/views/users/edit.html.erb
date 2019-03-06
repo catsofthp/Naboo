@@ -14,7 +14,7 @@
   <tr>
     <% if current_user == event.user then%>
       <td class="text-center"><%= event.id %></td>
-      <td class="text-center"><%= event.products.each do |testing| %></td>
+      <td class="text-center"><% event.products.each do |testing| %></td>
           <td class="text-center"><%= testing.title %></td>
         <% end %>
     <%else end %>

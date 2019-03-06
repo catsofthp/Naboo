@@ -10,12 +10,11 @@
       </tr>
     </thead>
     <tbody class="list">
-      <% orders.order(created_at: desc).each do |order| %>
-        <% if current_user.orders.include?(order) %>
-          <tr id="orderInUserPage">
+      <% orders.order("created_at DESC").each do |order| %>
+        <tr>
+          <div id="orderInUserPage" type="button">
             <th scope="row">
               <div class="media align-items-center">
-                <img alt="Image placeholder" src="<%= order.products[0].image_url %>" class="" style="width: 80px;">
                 <div class="media-body pl-3">
                   <div class="lh-100 text-dark font-weight-bold mb-0">
                     <%= order.id %>
@@ -37,15 +36,15 @@
               <%= order.payable_amount.round(2) %> €
             </td>
             <td class="text-right"></td>
-            <tr class="table-divider"></tr>
-          </tr>
-
-        <!-- PARTIAL DE L ORDER -->
+          </div>
+          
+          <!-- PARTIAL DE L ORDER -->
 
           <div class="collapse">
-            <%= render 'orderproducts', order: order, products: Products.map { |product| if order.products.include?(product) then product end } %>
+            <%= render 'orderproducts', order: order, products: Product.all.map { |product| if order.products.include?(product) then product end }.compact %>
           </div>
-        <% end %>
+          <tr class="table-divider"></tr>
+        </tr>
       <% end %>
     </tbody>
   </table>
