@@ -5,6 +5,7 @@ class CartsController < ApplicationController
 
   def show
     @products = Product.all
+    @user = User.find(params[:id])
   end
 
   def create
@@ -24,7 +25,7 @@ class CartsController < ApplicationController
 
   def add_product_to_cart_from_product_page
     CartProduct.create!(cart: current_user.cart, product: Product.find(params[:product_id]))
-    flash[:success] = "Product added to cart"
+    flash[:success] = "Chat mignon ajouté au panier"
   end
 
   private

@@ -1,82 +1,82 @@
 <!-- Header (account) -->
-<section class="header-account-page bg-primary d-flex align-items-end" data-offset-top="#header-main">
-  <!-- Header container -->
-  <div class="container pt-4 pt-lg-0">
-    <div class="row">
-      <div class=" col-lg-12">
-        <!-- Salute + Small stats -->
-        <div class="row align-items-center mb-4">
-          <div class="col-md-5 mb-4 mb-md-0">
-            <span class="h2 mb-0 text-white d-block">Morning, Heather</span>
-            <span class="text-white">Have a nice day!</span>
-          </div>
-          <div class="col-auto flex-fill d-none d-xl-block">
-            <ul class="list-inline row justify-content-lg-end mb-0">
-              <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
+    <section class="header-account-page bg-primary d-flex align-items-end" data-offset-top="#header-main" style="height: 180px">
+      <!-- Header container -->
+      <div class="container pt-4 pt-lg-0">
+        <div class="row">
+          <div class=" col-lg-12">
+            <!-- Salute + Small stats -->
+            <div class="row align-items-center mb-4">
+              <div class="col-md-5 mb-4 mb-md-0">
+                <span class="h2 mb-0 text-white d-block">Hello, <%= @user.first_name %></span>
+                <span class="text-white">Comment chat va ?</span>
+              </div>
+              <div class="col-auto flex-fill d-none d-xl-block">
+                <ul class="list-inline row justify-content-lg-end mb-0">
+                  <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
                     <span class="badge badge-dot text-white">
                       <i class="bg-success"></i>Ventes de chats
                     </span>
-                <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
-                  57.8%
-                  <small class="fas fa-angle-up text-success"></small>
-                </a>
-              </li>
-              <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
+                    <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
+                      57.8%
+                      <small class="fas fa-angle-up text-success"></small>
+                    </a>
+                  </li>
+                  <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
                     <span class="badge badge-dot text-white">
                       <i class="bg-warning"></i>Reproduction
                     </span>
-                <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
-                  13.36%
-                  <small class="fas fa-angle-up text-warning"></small>
-                </a>
-              </li>
-              <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
+                    <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
+                      13.36%
+                      <small class="fas fa-angle-up text-warning"></small>
+                    </a>
+                  </li>
+                  <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
                     <span class="badge badge-dot text-white">
                       <i class="bg-danger"></i>Prix
                     </span>
-                <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
-                  -9.24%
-                  <small class="fas fa-angle-down text-danger"></small>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Account navigation -->
-        <div class="d-flex">
-          <a href="account-profile-public.html" class="btn btn-icon btn-group-nav shadow btn-neutral">
-            <span class="btn-inner--icon"><i class="fas fa-user"></i></span>
-            <span class="btn-inner--text d-none d-md-inline-block">Mon Profil</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="slice">
-  <div class="container">
-    <div class="row row-grid">
-      <div class="col-lg-9 order-lg-2">
-        <!-- Change avatar -->
-        <div class="card bg-gradient-warning hover-shadow-lg">
-          <div class="card-body py-3">
-            <div class="row row-grid align-items-center">
-              <div class="col-lg-8">
-                <div class="media align-items-center">
-                  <div class="media-body">
-                    <h5 class="text-white mb-0">Heather Wright</h5>
-                  </div>
-                </div>
+                    <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
+                      -9.24%
+                      <small class="fas fa-angle-down text-danger"></small>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="col-auto flex-fill mt-4 mt-sm-0 text-sm-right d-none d-lg-block">
-                <a href="/products" class="btn btn-sm btn-white rounded-pill btn-icon shadow">
-                  <span class="btn-inner--icon"><i class="fas fa-fire"></i></span>
-                  <span class="btn-inner--text">Commencer mon shopping</span>
-                </a>
-              </div>
+            </div>
+            <!-- Account navigation -->
+            <div class="d-flex">
+              <a href="account-profile-public.html" class="btn btn-icon btn-group-nav shadow btn-neutral">
+                <span class="btn-inner--icon"><i class="fas fa-user"></i></span>
+                <span class="btn-inner--text d-none d-md-inline-block"><%= @user.first_name %> <%= @user.last_name %></span>
+              </a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="slice">
+      <div class="container">
+        <div class="row row-grid">
+          <div class="col-lg-9 order-lg-2">
+            <!-- Change avatar -->
+            <div class="card bg-gradient-warning hover-shadow-lg">
+              <div class="card-body py-3">
+                <div class="row row-grid align-items-center">
+                  <div class="col-lg-8">
+                    <div class="media align-items-center">
+                      <div class="media-body">
+                        <h5 class="text-white mb-0"> Profil </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto flex-fill mt-4 mt-sm-0 text-sm-right d-none d-lg-block">
+                    <a href="/products" class="btn btn-sm btn-white rounded-pill btn-icon shadow">
+                      <span class="btn-inner--icon"><i class="fas fa-fire"></i></span>
+                      <span class="btn-inner--text">Continuer mon shopping</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
         <!-- General information form -->
         <div class="actions-toolbar py-2 mb-4">
           <h5 class="mb-1">Infos générales</h5>
@@ -95,6 +95,20 @@
                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
                     <small class="form-text text-muted mt-2">Il s'agit de l'adresse à laquelle nous t'enverrons quelques nouvelles relatives à ton profil et à tes commandes de chatons. </small>
                   </div>
+                  <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Prénom</label>
+                    <input class="form-control" type="text" placeholder="<%= @user.first_name %>">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Nom</label>
+                    <input class="form-control" type="text" placeholder="<%= @user.last_name %>">
+                  </div>
+                </div>
+              </div>
 
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -134,15 +148,19 @@
           </div>
           <!-- Save changes buttons -->
 
+          <!-- Show orders -->
+          <div id="showOrders">
+            <%= render "orders", orders: current_user.orders %>
+          </div>
         <!-- Delete -->
         <div class="mt-5 pt-5 delimiter-top">
           <div class="actions-toolbar py-2 mb-4">
-            <h5 class="mb-1">Delete account</h5>
-            <p class="text-sm text-muted mb-0">Deleting your account is ireversible and can affect past activites.</p>
+            <h5 class="mb-1">Supprimer mon compte</h5>
+            <p class="text-sm text-muted mb-0">Supprimer ton compte est irréversible, et nous en sommes désolés, mais nous ne pouvons rien contre ton inchatichfaction...</p>
           </div>
         </div>
         <!-- Button trigger modal -->
-        <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-danger" %></p>
+        <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-danger" %></p>
 
       </div>
       <!-- FORM END -->
@@ -152,13 +170,13 @@
         <div data-toggle="sticky" data-sticky-offset="30" data-negative-margin=".card-profile-cover">
           <div class="card">
             <div class="card-header py-3">
-              <span class="h6">Modifier mon profil</span>
+              <span class="h6">Mon espace perso</span>
             </div>
             <div class="list-group list-group-sm list-group-flush">
               <a href="account-profile.html" class="list-group-item list-group-item-action d-flex justify-content-between">
                 <div>
                   <i class="fas fa-user-circle mr-2"></i>
-                  <span>Profil</span>
+                  <span>Modification Profil</span>
                 </div>
                 <div>
                   <i class="fas fa-angle-right"></i>
@@ -167,7 +185,7 @@
               <a href="account-settings.html" class="list-group-item list-group-item-action d-flex justify-content-between">
                 <div>
                   <i class="fas fa-cog mr-2"></i>
-                  <span>Réglages</span>
+                  <span>Suppression Compte</span>
                 </div>
                 <div>
                   <i class="fas fa-angle-right"></i>

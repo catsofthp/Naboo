@@ -1,32 +1,32 @@
 <% if @cart.products.count == 0 %>
 
-<div class="main-content">
   <div class="main-content">
-    <section class="slice slice-xl mh-100vh d-flex align-items-center" data-offset-top="#header-main">
-      <div class="container pt-6 position-relative zindex-100">
-        <div class="row justify-content-center">
-          <div class="col-lg-7">
-            <div class="text-center">
-              <h6 class="h4 my-4">Ton panier est vide.</h6>
-              <p class="px-md-5">
-                Pour afficher un panier, il faudrait commencer par le remplir de chats...
-              </p>
-              <a href="/products" class="btn btn-sm btn-primary btn-icon rounded-pill mt-5">
-                <span class="btn-inner--icon"><i class="fas fa-angle-left"></i></span>
-                <span class="btn-inner--text">Retourner à la boutique</span>
-              </a>
+    <div class="main-content">
+      <section class="slice slice-xl mh-100vh d-flex align-items-center" data-offset-top="#header-main">
+        <div class="container pt-6 position-relative zindex-100">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="text-center">
+                <h6 class="h4 my-4">Ton panier est vide.</h6>
+                <p class="px-md-5">
+                  Pour afficher un panier, il faudrait commencer par le remplir de chats...
+                </p>
+                <a href="/products" class="btn btn-sm btn-primary btn-icon rounded-pill mt-5">
+                  <span class="btn-inner--icon"><i class="fas fa-angle-left"></i></span>
+                  <span class="btn-inner--text">Retourner à la boutique</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
-</div>
 
 <% else %>
 
 <!-- Header (account) -->
-<header class="header-account-page bg-primary d-flex align-items-end">
+<header class="header-account-page bg-primary d-flex align-items-end" style="height: 180px">
   <!-- Header container -->
   <div class="container">
     <div class="row">
@@ -34,29 +34,22 @@
         <!-- Salute + Small stats -->
         <div class="row align-items-center mb-4">
           <div class="col-md-5 mb-4 mb-md-0">
-            <span class="h2 mb-0 text-white d-block">Morning Heather</span>
-            <span class="text-white">Have a nice day!</span>
+            <span class="h2 mb-0 text-white d-block">Hello, <%= @user.first_name %></span>
+            <span class="text-white">Comment chat va ?</span>
           </div>
         </div>
         <!-- Account navigation -->
         <div class="d-flex">
           <div class="btn-group btn-group-nav shadow" role="group" aria-label="Basic example">
             <div class="btn-group" role="group">
-              <a href="checkout-cart.html" class="btn btn-white btn-icon">
-                <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
-                <span class="btn-inner--text d-none d-md-inline-block">Panier</span>
-              </a>
-              <a href="checkout-customer.html" class="btn btn-white btn-icon">
-                <span class="btn-inner--icon"><i class="fas fa-user"></i></span>
-                <span class="btn-inner--text d-none d-md-inline-block">Profil client</span>
-              </a>
-              <a href="checkout-shipping.html" class="btn btn-white btn-icon">
-                <span class="btn-inner--icon"><i class="fas fa-truck"></i></span>
-                <span class="btn-inner--text d-none d-md-inline-block">Livraison</span>
-              </a>
-              <a href="checkout-payment.html" class="btn btn-white btn-icon">
-                <span class="btn-inner--icon"><i class="fas fa-credit-card"></i></span>
-                <span class="btn-inner--text d-none d-md-inline-block">Paiement</span>
+              <%= link_to cart_path, method: "GET" do %>
+                <button type="button" class="btn btn-white btn-icon"><span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="btn-inner--text d-none d-md-inline-block">Panier</span></button>
+              <% end %>
+              <%= link_to edit_user_registration_path, method: "GET" do %>
+                <button type="button" class="btn btn-white btn-icon"><span class="btn-inner--icon"><i class="fas fa-user"></i></span>
+                <span class="btn-inner--text d-none d-md-inline-block">Mon Profil</span></button>
+              <% end %>
               </a>
             </div>
           </div>
@@ -83,62 +76,61 @@
         </thead>
         <tbody class="list">
           <% @products.each do |product| %>
-          <% if current_user.cart.products.include?(product) %>
-          <tr>
-            <th scope="row">
-              <div class="media align-items-center">
-                <img alt="Image placeholder" src="<%= product.image_url %>" class="" style="width: 80px;">
-                <div class="media-body pl-3">
-                  <div class="lh-100">
-                    <%= link_to product.title, product_path(product), class:"text-dark font-weight-bold mb-0" %>
+            <% if current_user.cart.products.include?(product) %>
+            <tr>
+              <th scope="row">
+                <div class="media align-items-center">
+                  <img alt="Image placeholder" src="<%= product.image_url %>" class="" style="width: 80px;">
+                  <div class="media-body pl-3">
+                    <div class="lh-100">
+                      <%= link_to product.title, product_path(product), class:"text-dark font-weight-bold mb-0" %>
+                    </div>
+                    <span class="font-weight-bold text-muted">En stock</span>
                   </div>
-                  <span class="font-weight-bold text-muted">En stock</span>
                 </div>
-              </div>
-            </th>
-            <td class="price">
-              <%= product.price %> €
-            </td>
-            <td>
-              <span class="badge badge-dot mr-4">
-                <i class="bg-"></i>
-                <span class="status">Oui</span>
-              </span>
-            </td>
-            <td>
-              <span class="badge badge-dot ml-3">
-                <i class="bg-"></i>
-                <span class="status"><%= current_user.cart.products.where(id: product.id).count %></span>
-              </span>
-              <div class="row">
+              </th>
+              <td class="price">
+                <%= product.price %> €
+              </td>
+              <td>
+                <span class="badge badge-dot mr-4">
+                  <i class="bg-"></i>
+                  <span class="status">Oui</span>
+                </span>
+              </td>
+              <td>
+                <span class="badge badge-dot ml-3">
+                  <i class="bg-"></i>
+                  <span class="status"><%= current_user.cart.products.where(id: product.id).count %></span>
+                </span>
+                <div class="row">
+                  <div class="actions ml-3">
+                    <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
+                    <i class="fas fa-minus"></i>
+                    <% end %>
+                  </div>
+                  <div class="actions ml-3">
+                    <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
+                    <i class="fas fa-plus"></i>
+                    <% end %>
+                  </div>
+                </div>
+              </td>
+              <td class="total">
+                <%= (current_user.cart.products.where(id: product.id).count * product.price).round(2) %> €
+              </td>
+              <td class="text-right">
+                <!-- Actions -->
                 <div class="actions ml-3">
-                  <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
-                  <i class="fas fa-minus"></i>
+                  <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "delete"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
+                  <i class="fas fa-times"></i>
                   <% end %>
-                </div>
-                <div class="actions ml-3">
-                  <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
-                  <i class="fas fa-plus"></i>
-                  <% end %>
-                </div>
+                </a>
               </div>
             </td>
-            <td class="total">
-              <%= (current_user.cart.products.where(id: product.id).count * product.price).round(2) %> €
-            </td>
-            <td class="text-right">
-              <!-- Actions -->
-              <div class="actions ml-3">
-                <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "delete"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
-                <i class="fas fa-times"></i>
-                <% end %>
-              </a>
-            </div>
-          </td>
-          <tr class="table-divider"></tr>
-        </tr>
-        <% else %>
-        <% end %>
+            <tr class="table-divider"></tr>
+          </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>

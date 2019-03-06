@@ -23,12 +23,15 @@
               <% end %>
               </li>
               <li class="nav-item">
+              <%= link_to edit_user_registration_path, method: "GET" do %>
+                <button type="button" class="btn btn-soft-primary btn-icon btn-sm"> Profil </button>
+              <% end %>
               <%= link_to destroy_user_session_path, method: "DELETE" do %>
-                <button type="button" class="btn btn-danger btn-icon"> Sign Out </button>
+                <button type="button" class="btn btn-soft-danger btn-icon btn-sm"> Déconnexion </button>
               <% end %>
             <% else %>
               <%= link_to new_user_session_path do %>
-                <button type="button" class="btn btn-primary btn-icon"> Log In </button>
+                <button type="button" class="btn btn-primary btn-icon"> Connexion </button>
               <% end %>
             <% end %>
           </li>
