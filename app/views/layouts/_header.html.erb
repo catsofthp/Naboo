@@ -26,6 +26,13 @@
               <% end %>
               </li>
               <li class="nav-item">
+              <% if current_user.is_admin %>
+                <%= link_to admin_path, method: "GET" do %>
+                  <button type="button" class="btn btn-soft-warning btn-icon btn-sm"> Dashboard </button>
+                <% end %>
+              <% end %>
+              </li>
+              <li class="nav-item">
               <%= link_to destroy_user_session_path, method: "DELETE" do %>
                 <button type="button" class="btn btn-soft-danger btn-icon btn-sm"> Déconnexion </button>
               <% end %>
