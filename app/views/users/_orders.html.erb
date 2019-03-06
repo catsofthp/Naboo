@@ -1,0 +1,54 @@
+<div class="table-responsive">
+  <table class="table table-cards align-items-center">
+    <thead>
+      <tr>
+        <th scope="col" class="sort" data-sort="product">Order id</th>
+        <th scope="col" class="sort" data-sort="price">Date</th>
+        <th scope="col" class="sort" data-sort="size">Quantité de produits</th>
+        <th scope="col" class="sort" data-sort="total">Montant Payé</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="list">
+      <% orders.order(created_at: desc).each do |order| %>
+        <% if current_user.orders.include?(order) %>
+          <tr id="orderInUserPage">
+            <th scope="row">
+              <div class="media align-items-center">
+                <img alt="Image placeholder" src="<%= order.products[0].image_url %>" class="" style="width: 80px;">
+                <div class="media-body pl-3">
+                  <div class="lh-100 text-dark font-weight-bold mb-0">
+                    <%= order.id %>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td class="date">
+              <%= order.created_at %>
+            </td>
+            <td>
+              <span class="badge badge-dot ml-3">
+                <i class="bg-"></i>
+                <span class="status"><%= order.products.count %></span>
+              </span>
+              </div>
+            </td>
+            <td class="total">
+              <%= order.payable_amount.round(2) %> €
+            </td>
+            <td class="text-right"></td>
+            <tr class="table-divider"></tr>
+          </tr>
+
+        <!-- PARTIAL DE L ORDER -->
+
+          <div class="collapse">
+            <%= render 'orderproducts', order: order, products: Products.map { |product| if order.products.include?(product) then product end } %>
+          </div>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+  

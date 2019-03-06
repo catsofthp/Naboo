@@ -1,0 +1,50 @@
+<div class="table-responsive">
+  <table class="table table-cards align-items-center">
+    <thead>
+      <tr>
+        <th scope="col" class="sort" data-sort="product">Espèce</th>
+        <th scope="col" class="sort" data-sort="price">Prix</th>
+        <th scope="col" class="sort" data-sort="size">Vivant</th>
+        <th scope="col">Quantité</th>
+        <th scope="col" class="sort" data-sort="total">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="list">
+      <% products.each do |product| %>
+        <tr>
+          <th scope="row">
+            <div class="media align-items-center">
+              <img alt="Image placeholder" src="<%= product.image_url %>" class="" style="width: 80px;">
+              <div class="media-body pl-3">
+                <div class="lh-100">
+                  <%= link_to product.title, product_path(product), class:"text-dark font-weight-bold mb-0" %>
+                </div>
+              </div>
+            </div>
+          </th>
+          <td class="price">
+            <%= product.price %> €
+          </td>
+          <td>
+            <span class="badge badge-dot mr-4">
+              <i class="bg-"></i>
+              <span class="status">Oui</span>
+            </span>
+          </td>
+          <td>
+            <span class="badge badge-dot ml-3">
+              <i class="bg-"></i>
+              <span class="status"><%= order.products.where(id: product.id).count %></span>
+            </span>
+          </td>
+          <td class="total">
+            <%= (order.products.where(id: product.id).count * product.price).round(2) %> €
+          </td>
+          <td class="text-right"></td>
+          <tr class="table-divider"></tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
