@@ -1,3 +1,10 @@
-$(".orderInUserPage").on( "click", function() { 
-  $(this).next().toggleClass("collapse")
+ $(() => { 
+
+  $(".orderInUserPage").on("click", function() { 
+    $(this).next().toggleClass("collapse");
+   })
+  
+
+
+
  })
