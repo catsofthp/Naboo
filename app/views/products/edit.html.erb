@@ -1,6 +1,34 @@
 <h1>Editing Product</h1>
 
-<%= render 'form', product: @product %>
+<div class="col-md-6">
+  <div class="actions">
+    <%= link_to 'Go to Show Product', @product, class: "btn btn-sm btn-success" %>
+    <%= link_to 'Go to Root', products_path, class: "btn btn-sm btn-primary" %>
+  </div>
+</div>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= render 'form', product: @product %>
+<br />
+
+<h3>Changer d'image ?</h3>
+
+<%= form_tag product_avatars_path(@product), multipart: true do %>
+  <div class="col-md-6">
+    <div class="actions">
+  <label for="file-1">
+  </label>
+  <span class="btn btn-large btn-warning btn-file">
+        <i class="fa fa-upload"></i>
+    <span>Choose a file…</span>
+    <%= file_field_tag :avatar %>
+  </span>
+    </div>
+  </div>
+<br />
+  <div class="col-md-6">
+    <div class="actions">
+      <%= submit_tag "Mettre à jour l'image", class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+  <br />
+<% end %>

@@ -10,34 +10,37 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="col-md-6">
+    <div class="form-group">
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: "form-control-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+    </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="form-group">
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :description, class: "form-control-label" %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+    </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="form-group">
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.label :price, class: "form-control-label" %>
+    <%= form.text_field :price, class: "form-control" %>
+  </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+  <div class="col-md-6">
+    <div class="actions">
+      <%= form.submit "Mettre à jour", class: "btn btn-sm btn-primary" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
-<% end %>
-
-<h3>Changer d'avatar ?</h3>
-<%= form_tag product_avatars_path(@product), multipart: true do %>
-  <%= file_field_tag :avatar %>
-  <%= submit_tag "mettre à jour" %>
 <% end %>
