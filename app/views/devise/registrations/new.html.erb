@@ -1,7 +1,6 @@
 <!-- SVG background -->
 <div class="bg-absolute-cover bg-size--contain d-none d-lg-block">
   <figure class="w-100">
-    <img alt="Image placeholder" src="../../assets/img/svg/backgrounds/bg-3.svg" class="svg-inject">
   </figure>
 </div>
 <div class="container py-5 px-md-0 d-flex align-items-center">
@@ -11,8 +10,8 @@
         <div class="card shadow zindex-100 mb-0">
           <div class="card-body px-md-5 py-5">
             <div class="mb-5">
-              <h6 class="h3">Create account</h6>
-              <p class="text-muted mb-0">Made with love by developers for developers.</p>
+              <h6 class="h3">Inscription</h6>
+              <p class="text-muted mb-0">Le site qui fait l'apologie des chats.</p>
             </div>
             <span class="clearfix"></span>
             <!-- FORM -->
@@ -21,7 +20,7 @@
 
               <div class="field">
                 <%= f.label :email, class: 'control-label'%><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control' %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email...', class: 'form-control' %>
               </div>
 
               <div class="field">
@@ -29,12 +28,12 @@
                 <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'form-control' %>
+                <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Mot de passe...', class: 'form-control' %>
               </div>
 
               <div class="field">
                 <%= f.label :password_confirmation, class: 'control-label' %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm password', class: 'form-control' %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Attention aux fautes...', class: 'form-control' %>
               </div>
 
               <div class="actions">
@@ -46,14 +45,14 @@
 
             <!-- FORM END -->
           </div>
-          <div class="card-footer px-md-5"><small>Already have an acocunt?</small>
-            <a href="#" class="small font-weight-bold">Sign in</a></div>
+          <div class="card-footer px-md-5"><small>Déja un compte?</small>
+            <a href="#" class="small font-weight-bold">Connexion</a></div>
         </div>
       </div>
       <div class="col-lg-6 order-lg-1 d-none d-lg-block">
         <blockquote>
-          <h3 class="h2 mb-4">Keep your face always toward the sunshine - and shadows will fall behind you.</h3>
-          <footer>— <cite class="text-lg">John Sulivan</cite></footer>
+          <h3 class="h2 mb-4">La vie c’est comme tenter de mettre des chatons dans un panier. Quand on y met le dernier, le premier est déjà de l’autre côté.</h3>
+          <footer>— <cite class="text-lg">Joanna Trollope</cite></footer>
         </blockquote>
       </div>
     </div>

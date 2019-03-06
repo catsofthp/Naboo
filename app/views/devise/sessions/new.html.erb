@@ -1,9 +1,5 @@
-<div class="main-content">
-  <section class="slice slice-lg min-vh-100 d-flex align-items-center bg-section-secondary">
-    <!-- SVG background -->
     <div class="bg-absolute-cover bg-size--contain d-none d-lg-block">
       <figure class="w-100">
-        <img alt="Image placeholder" src="../../assets/img/svg/backgrounds/bg-3.svg" class="svg-inject">
       </figure>
     </div>
     <div class="container py-5 px-md-0 d-flex align-items-center">
@@ -13,8 +9,8 @@
             <div class="card shadow zindex-100 mb-0">
               <div class="card-body px-md-5 py-5">
                 <div class="mb-5">
-                  <h6 class="h3">Login</h6>
-                  <p class="text-muted mb-0">Sign in to your account to continue.</p>
+                  <h6 class="h3">Connexion</h6>
+                  <p class="text-muted mb-0">Connecte toi poura accéder à ton compte.</p>
                 </div>
                 <span class="clearfix"></span>
 
@@ -22,12 +18,12 @@
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="field">
                     <%= f.label :email, class: 'control-label' %><br />
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control' %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email...', class: 'form-control' %>
                   </div>
 
                   <div class="field">
                     <%= f.label :password, class: 'control-label' %><br />
-                    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'form-control' %>
+                    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Mot de passe...', class: 'form-control' %>
                   </div>
 
                   <% if devise_mapping.rememberable? %>
@@ -38,7 +34,7 @@
                   <% end %>
 
                   <div class="actions">
-                    <%= f.submit "Log in", class: 'btn btn-primary mb-3 mb-sm-0' %>
+                    <%= f.submit "Connexion", class: 'btn btn-primary mb-3 mb-sm-0' %>
                   </div>
                 <% end %>
 
@@ -46,14 +42,14 @@
                 <!-- FORM END -->
 
               </div>
-              <div class="card-footer px-md-5"><small>Not registered?</small>
-                <a href="#" class="small font-weight-bold">Create account</a></div>
+              <div class="card-footer px-md-5"><small>Pas de compte ?</small>
+                <a href="#" class="small font-weight-bold">Inscription</a></div>
             </div>
           </div>
-          <div class="col-lg-5 order-lg-1 d-none d-lg-block">
+          <div class="col-lg-6 order-lg-1 d-none d-lg-block">
             <blockquote>
-              <h3 class="h2 mb-4">Keep your face always toward the sunshine - and shadows will fall behind you.</h3>
-              <footer>— <cite class="text-lg">John Sulivan</cite></footer>
+              <h3 class="h2 mb-4">La vie c’est comme tenter de mettre des chatons dans un panier. Quand on y met le dernier, le premier est déjà de l’autre côté. </h3>
+              <footer>— <cite class="text-lg">Joanna Trollope</cite></footer>
             </blockquote>
           </div>
         </div>
