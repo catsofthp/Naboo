@@ -1,5 +1,8 @@
 class Product < ApplicationRecord
-  
+	# Add 'friendlyId' for a dynamic url
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   has_many :cart_products
   has_many :carts, through: :cart_products
   has_many :order_products

@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @products = Product.all
+    @product = Product.friendly.find(params[:id])
   end
 
   # GET /products/new
@@ -65,8 +66,9 @@ class ProductsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # Add 'friendly' for a dynamic url
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

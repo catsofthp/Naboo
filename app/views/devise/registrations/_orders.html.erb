@@ -12,7 +12,7 @@
     <tbody class="list">
       <% orders.order("created_at DESC").each do |order| %>
         <tr>
-          <div id="orderInUserPage" type="button">
+          <div class="orderInUserPage" type="button">
             <th scope="row">
               <div class="media align-items-center">
                 <div class="media-body pl-3">
@@ -38,7 +38,7 @@
             <td class="text-right"></td>
           </div>
           
-          <!-- PARTIAL DE L ORDER -->
+          <!-- PARTIAL DU CONTENU DE L' ORDER -->
 
           <div class="collapse">
             <%= render 'orderproducts', order: order, products: Product.all.map { |product| if order.products.include?(product) then product end }.compact %>
