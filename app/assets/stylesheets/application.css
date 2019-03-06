@@ -26,3 +26,7 @@
  header {
    background: #F0F0F0;
  }
+
+.navbar-nav li {
+  white-space: nowrap;
+}
