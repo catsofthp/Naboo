@@ -24,3 +24,6 @@
 //= require assets/libs/swiper/dist/js/swiper.min.js
 
 //= require orders_scripts
+$(document).ready(function () {
+
+});

@@ -8,6 +8,16 @@ class Order < ApplicationRecord
     self.products.sum {|product| product.price}
   end
 
+  def self.total_price
+    sum = 0
+    Order.all.each { |order| sum += order.payable_amount }
+    return sum
+  end
+
+  def self.average_price
+    self.total_price/Order.all.count
+  end
+
   after_create :welcome_order
   after_create :welcome_admin
 

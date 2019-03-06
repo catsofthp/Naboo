@@ -7,8 +7,9 @@
           <div class="row justify-content-center">
             <div class="col-lg-7">
               <div class="text-center">
+                <i class="fas fa-cat fa-8x"></i>
                 <h6 class="h4 my-4">Ton panier est vide.</h6>
-                <p class="px-md-5">
+                <p class="px-md-5 text-center">
                   Pour afficher un panier, il faudrait commencer par le remplir de chats...
                 </p>
                 <a href="/products" class="btn btn-sm btn-primary btn-icon rounded-pill mt-5">
@@ -20,6 +21,7 @@
           </div>
         </div>
       </section>
+
     </div>
   </div>
 
@@ -35,6 +37,7 @@
         <div class="row align-items-center mb-4">
           <div class="col-md-5 mb-4 mb-md-0">
             <span class="h2 mb-0 text-white d-block">Hello, <%= current_user.first_name %></span>
+
             <span class="text-white">Comment chat va ?</span>
           </div>
         </div>
@@ -104,12 +107,12 @@
                   <span class="status"><%= current_user.cart.products.where(id: product.id).count %></span>
                 </span>
                 <div class="row">
-                  <div class="actions ml-3">
+                  <div class="actions ml-4">
                     <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                     <i class="fas fa-minus"></i>
                     <% end %>
                   </div>
-                  <div class="actions ml-3">
+                  <div class="actions ml-2">
                     <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                     <i class="fas fa-plus"></i>
                     <% end %>

@@ -78,7 +78,7 @@
               </div>
             </div>
         <!-- General information form -->
-        <div class="actions-toolbar py-2 mb-4">
+        <div class="actions-toolbar py-2 mb-4" id="showAccount">
           <h5 class="mb-1">Infos générales</h5>
           <p class="text-sm text-muted mb-0">Pour commander un de nos petits chatons, n'oublie pas de compléter ton comptes avec toutes tes informations personnelles.</p>
         </div>
@@ -147,13 +147,14 @@
             </div>
           </div>
           <!-- Save changes buttons -->
-
+          <br/>
           <!-- Show orders -->
           <div id="showOrders">
-            <%= render "orders", orders: current_user.orders %>
+            <h5 class="mb-1">Commandes</h5>
+            <%= render "layouts/orders", orders: current_user.orders %>
           </div>
         <!-- Delete -->
-        <div class="mt-5 pt-5 delimiter-top">
+        <div class="mt-5 pt-5 delimiter-top" id="deleteAccount">
           <div class="actions-toolbar py-2 mb-4">
             <h5 class="mb-1">Supprimer mon compte</h5>
             <p class="text-sm text-muted mb-0">Supprimer ton compte est irréversible, et nous en sommes désolés, mais nous ne pouvons rien contre ton inchatichfaction...</p>
@@ -173,19 +174,28 @@
               <span class="h6">Mon espace perso</span>
             </div>
             <div class="list-group list-group-sm list-group-flush">
-              <a href="account-profile.html" class="list-group-item list-group-item-action d-flex justify-content-between">
+              <a href="#showAccount" class="list-group-item list-group-item-action d-flex justify-content-between">
                 <div>
                   <i class="fas fa-user-circle mr-2"></i>
-                  <span>Modification Profil</span>
+                  <span>Modifier mon profil</span>
                 </div>
                 <div>
                   <i class="fas fa-angle-right"></i>
                 </div>
               </a>
-              <a href="account-settings.html" class="list-group-item list-group-item-action d-flex justify-content-between">
+              <a href="#showOrders" class="list-group-item list-group-item-action d-flex justify-content-between">
                 <div>
                   <i class="fas fa-cog mr-2"></i>
-                  <span>Suppression Compte</span>
+                  <span>Mes commandes</span>
+                </div>
+                <div>
+                  <i class="fas fa-angle-right"></i>
+                </div>
+              </a>
+              <a href="#deleteAccount" class="list-group-item list-group-item-action d-flex justify-content-between">
+                <div>
+                  <i class="fas fa-cog mr-2"></i>
+                  <span>Supprimer mon compte</span>
                 </div>
                 <div>
                   <i class="fas fa-angle-right"></i>

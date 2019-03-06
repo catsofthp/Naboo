@@ -1,1 +1,0 @@
-$(".orderInUserPage").on( "click", function() {  })

@@ -1,0 +1,50 @@
+<div class="table-responsive">
+  <table class="table table-cards align-items-center">
+    <thead>
+      <tr>
+        <th scope="col" class="sort" data-sort="product">Order id</th>
+        <th scope="col" class="sort" data-sort="price">Date</th>
+        <th scope="col" class="sort" data-sort="size">Quantité de produits</th>
+        <th scope="col" class="sort" data-sort="total">Montant Payé</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="list">
+      <% orders.order("created_at DESC").each do |order| %>
+        <tr>
+          <td scope="row">
+            <div class="media align-items-center">
+              <div class="media-body pl-3">
+                <div class="lh-100 text-dark font-weight-bold mb-0">
+                  <%= order.id %>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="date">
+            <%= order.created_at %>
+          </td>
+          <td>
+            <span class="badge badge-dot ml-3">
+              <i class="bg-"></i>
+              <span class="status"><%= order.products.count %></span>
+            </span>
+            </td>
+          <td class="total">
+            <%= order.payable_amount.round(2) %> €
+          </td>
+          <td>
+            <i class="fas fa-plus-square" id="showOrder<%=order.id%>" type="button"></i>
+          </td>
+          <td class="text-right"></td>
+          
+          <!-- PARTIAL DU CONTENU DE L' ORDER -->
+
+          <%= render 'layouts/orderproducts', order: order, products: Product.all.map { |product| if order.products.include?(product) then product end }.compact %>
+          
+          <tr class="table-divider"></tr>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

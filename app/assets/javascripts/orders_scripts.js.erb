@@ -1,0 +1,30 @@
+ $(() => { 
+
+  $(".orderInUserPage").on("click", function() { 
+    $(this).next().toggleClass("collapse");
+   })
+  
+  function scrollToAnchor(aid){
+    var aTag = $(aid);
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+  }
+
+  $("a[href='#deleteAccount']").on("click", function (event) { 
+    event.preventDefault()
+    scrollToAnchor("#deleteAccount")
+  })
+  $("a[href='#showAccount']").on("click", function (event) { 
+    event.preventDefault()
+    scrollToAnchor("#showAccount")
+  })
+  $("a[href='#showOrders']").on("click", function (event) { 
+    event.preventDefault()
+    scrollToAnchor("#showOrders")
+  })
+
+  let lastOrder = <%= Order.last.id %> 
+  for(let i = 1; i <= lastOrder; i++) {
+    $(`#showOrder${i}`).on("click", function() { $(`#order${i}Title`).toggleClass("collapse"); $(`#order${i}Content`).toggleClass("collapse") } )
+  } 
+
+ })
