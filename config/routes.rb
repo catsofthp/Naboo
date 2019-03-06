@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update, :destroy]
   resources :products
-  resources :carts, only: [:show, :create, :update] do
-    resources :charges
+  resources :carts, only: [:show, :create, :update], path: "" do
+    resources :charges, only: [:new, :create], path: ""
   end
 
   resources :products do
