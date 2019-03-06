@@ -40,7 +40,7 @@
           
           <!-- PARTIAL DU CONTENU DE L' ORDER -->
 
-          <%= render 'orderproducts', order: order, products: Product.all.map { |product| if order.products.include?(product) then product end }.compact %>
+          <%= render 'layouts/orderproducts', order: order, products: Product.all.map { |product| if order.products.include?(product) then product end }.compact %>
           
           <tr class="table-divider"></tr>
         </tr>
