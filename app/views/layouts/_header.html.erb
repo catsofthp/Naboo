@@ -1,11 +1,8 @@
 <header>
   <nav class="navbar navbar-horizontal navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <a href="/products"><img alt="Image placeholder" src="https://image.noelshack.com/fichiers/2019/10/3/1551881449-screenshot-2019-03-06-at-15-10-38.png" width="5%" height="5%" class="img-fluid">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-primary" aria-controls="navbar-primary" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbar-primary">
+        <img alt="Image placeholder" src="https://image.noelshack.com/fichiers/2019/10/3/1551881449-screenshot-2019-03-06-at-15-10-38.png" width="5%" height="5%" class="img-fluid">
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item">
             <a class="nav-link nav-link-icon" href="https://www.instagram.com/cats_of_instagram/">
@@ -26,6 +23,8 @@
               <%= link_to edit_user_registration_path, method: "GET" do %>
                 <button type="button" class="btn btn-soft-primary btn-icon btn-sm"> Profil </button>
               <% end %>
+              </li>
+              <li class="nav-item">
               <%= link_to destroy_user_session_path, method: "DELETE" do %>
                 <button type="button" class="btn btn-soft-danger btn-icon btn-sm"> Déconnexion </button>
               <% end %>
