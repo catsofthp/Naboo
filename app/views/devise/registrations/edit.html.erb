@@ -148,6 +148,10 @@
           </div>
           <!-- Save changes buttons -->
 
+          <!-- Show orders -->
+          <div id="showOrders">
+            <%= render "orders", orders: current_user.orders %>
+          </div>
         <!-- Delete -->
         <div class="mt-5 pt-5 delimiter-top">
           <div class="actions-toolbar py-2 mb-4">
