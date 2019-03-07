@@ -82,7 +82,11 @@
             <tr>
               <th scope="row">
                 <div class="media align-items-center">
-                  <img alt="Image placeholder" src="<%= product.image_url %>" class="" style="width: 80px;">
+                  <%if product.avatar.attached?%>
+                    <%= image_tag(product.avatar, alt: 'avatar', :style => "width: 80px;") %>
+                  <%else%>
+                    <img src="<%= product.image_url %>" class="" style="width: 80px;">
+                  <%end%>
                   <div class="media-body pl-3">
                     <div class="lh-100">
                       <%= link_to product.title, product_path(product), class:"text-dark font-weight-bold mb-0" %>
