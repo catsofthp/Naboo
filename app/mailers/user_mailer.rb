@@ -5,6 +5,7 @@ class UserMailer < ApplicationMailer
   end
 
   def welcome_order(order)
+    @order = order
     mail(from: "nans.noel@gmail.com", to: order.user.email,
          subject: "Thank you for your order")
   end
