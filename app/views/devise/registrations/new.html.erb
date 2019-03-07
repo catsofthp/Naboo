@@ -24,35 +24,33 @@
               </div>
 
               <div class="field">
-                <%= f.label :password, class: 'control-label' %>
+                <%= f.label :mot_de_passe, class: 'control-label' %>
                 <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <em>(<%= @minimum_password_length %> caractères minimum)</em>
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Mot de passe...', class: 'form-control' %>
               </div>
 
               <div class="field">
-                <%= f.label :password_confirmation, class: 'control-label' %><br />
+                <%= f.label :confirmation_mot_de_passe, class: 'control-label' %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Attention aux fautes...', class: 'form-control' %>
               </div>
-
+              <br>
               <div class="actions">
-                <%= f.submit "Sign up", class: 'btn btn-primary mb-3 mb-sm-0' %>
+                <%= f.submit "Inscription", class: 'btn btn-soft-primary mb-3 mb-sm-0' %>
               </div>
             <% end %>
-
-            <%= render "devise/shared/links" %>
 
             <!-- FORM END -->
           </div>
           <div class="card-footer px-md-5"><small>Déja un compte?</small>
-            <a href="#" class="small font-weight-bold">Connexion</a></div>
+            <%= link_to "Connexion", new_session_path(resource_name), class: "small font-weight-bold"  %></div>
         </div>
       </div>
       <div class="col-lg-6 order-lg-1 d-none d-lg-block">
         <blockquote>
           <h3 class="h2 mb-4">La vie c’est comme tenter de mettre des chatons dans un panier. Quand on y met le dernier, le premier est déjà de l’autre côté.</h3>
-          <footer>— <cite class="text-lg">Joanna Trollope</cite></footer>
+          <p>— <cite class="text-lg">Joanna Trollope</cite></p>
         </blockquote>
       </div>
     </div>

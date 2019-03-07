@@ -7,7 +7,7 @@
             <!-- Salute + Small stats -->
             <div class="row align-items-center mb-4">
               <div class="col-md-5 mb-4 mb-md-0">
-                <span class="h2 mb-0 text-white">Hello, <%= @user.first_name %></span><br>
+                <span class="h2 mb-0 text-white">Hello,</span><br>
                 <span class="text-white">Comment chat va ?</span>
               </div>
               <div class="col-auto flex-fill d-none d-xl-block">
@@ -95,18 +95,6 @@
                     <small class="form-text text-muted mt-2">Il s'agit de l'adresse à laquelle nous t'enverrons quelques nouvelles relatives à ton profil et à tes commandes de chatons. </small>
                   </div>
                   <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-control-label">Prénom</label>
-                    <input class="form-control" type="text" placeholder="<%= @user.first_name %>">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-control-label">Nom</label>
-                    <input class="form-control" type="text" placeholder="<%= @user.last_name %>">
-                  </div>
-                </div>
               </div>
 
                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

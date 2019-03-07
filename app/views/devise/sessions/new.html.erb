@@ -22,34 +22,33 @@
                   </div>
 
                   <div class="field">
-                    <%= f.label :password, class: 'control-label' %><br />
+                    <%= f.label :"mot de passe", class: 'control-label' %><br />
                     <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Mot de passe...', class: 'form-control' %>
                   </div>
 
                   <% if devise_mapping.rememberable? %>
                     <div class="field">
                       <%= f.check_box :remember_me %>
-                      <%= f.label :remember_me %>
+                      <%= f.label :se_souvenir_de_moi %>
                     </div>
                   <% end %>
 
                   <div class="actions">
-                    <%= f.submit "Connexion", class: 'btn btn-primary mb-3 mb-sm-0' %>
+                    <%= f.submit "Connexion", class: 'btn btn-soft-primary mb-3 mb-sm-0' %>
                   </div>
                 <% end %>
 
-                <%= render "devise/shared/links" %>
                 <!-- FORM END -->
 
               </div>
               <div class="card-footer px-md-5"><small>Pas de compte ?</small>
-                <a href="#" class="small font-weight-bold">Inscription</a></div>
+                <%= link_to "Inscription", new_registration_path(resource_name), class: "small font-weight-bold"  %></div>
             </div>
           </div>
           <div class="col-lg-6 order-lg-1 d-none d-lg-block">
             <blockquote>
               <h3 class="h2 mb-4">La vie c’est comme tenter de mettre des chatons dans un panier. Quand on y met le dernier, le premier est déjà de l’autre côté. </h3>
-              <footer>— <cite class="text-lg">Joanna Trollope</cite></footer>
+              <p>— <cite class="text-lg">Joanna Trollope</cite></p>
             </blockquote>
           </div>
         </div>
