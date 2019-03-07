@@ -15,7 +15,7 @@ Vous avez reçu une commande de <% @order.user.email %></p>
   <% @order.products.each do |product| %>
 </p>
     <p>
-    - Titre : <% product.title %> Prix <% product.price %>
+    - Titre : <%= product.title %> Prix <%= product.price %>
     </p>
   <% end %>
   <% @order.products.each do |product| %>
