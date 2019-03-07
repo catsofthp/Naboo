@@ -94,5 +94,5 @@ random_user = User.create! ({first_name: "test", last_name: "test", email: "exam
 
 10.times do
   order = Order.create!(user: random_user)
-  rand(10).times { OrderProduct.create!(order: order, product: Product.all.sample) }
+  rand(1..10).times { OrderProduct.create!(order: order, product: Product.all.sample) }
 end
