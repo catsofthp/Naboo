@@ -5,7 +5,12 @@ class UserMailer < ApplicationMailer
   end
 
   def welcome_order(order)
+    @order = order
+<<<<<<< HEAD
     mail(from: "nans.noel@gmail.com", to: order.user.email,
+=======
+    mail(from: "nans.noel@gmail.com", to: "nabooadmin@yopmail.com",
+>>>>>>> delivery
          subject: "Thank you for your order")
   end
 
