@@ -9,9 +9,31 @@
             <div class="mt-4 text-center">
               <%if @product.avatar.attached?%>
                 <%= image_tag(@product.avatar, alt: 'avatar', :class => "img-fluid") %>
+              <%elsif @product.image_url.present? %>
+                  <img alt="Image placeholder" src="<%= @product.image_url %>" class="img-fluid">
               <%else%>
-                <img alt="Image placeholder" src="<%= @product.image_url %>" class="img-fluid">
-              <%end%>
+                <%= form_tag product_avatars_path(@product), multipart: true do %>
+                  <div class="col-md-6">
+                    <div class="actions">
+                      <label for="file-1">
+                      </label>
+                      <span class="btn btn-large btn-soft-warning btn-file">
+                          <i class="fa fa-upload"></i>
+                      <span>Choose a file…</span>
+                                          <%= file_field_tag :avatar %>
+                    </span>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="col-md-12 text-center">
+                    <div class="actions">
+                      <%= submit_tag "Mettre à jour l'image", class: "btn btn-sm btn-soft-primary" %>
+                    </div>
+                  </div>
+                  <br />
+                <% end %>
+              <% end %>
+
             </div>
           </div>
         </div>
