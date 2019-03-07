@@ -4,6 +4,8 @@ class CartsController < ApplicationController
   respond_to :html, :js
 
   def show
+    @products = Product.all
+
   end
 
   def create
