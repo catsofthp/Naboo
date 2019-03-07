@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: "L'annonce a été correctement créée." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: "L'annonce a été correctement mise à jour." }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to products_url, notice: "L'annonce a été correctement supprimée." }
       format.json { head :no_content }
     end
   end
@@ -79,7 +79,7 @@ class ProductsController < ApplicationController
     def is_owner?
       if current_user.is_admin == true
       else
-        flash[:error] = "Tu ne peux pas accéder à cette page car tu n'es pas admin !"
+        flash[:error] = "Tu ne peux pas accéder à cette page car tu n'es pas admin."
         redirect_to root_path
       end
     end
