@@ -82,7 +82,11 @@
             <tr>
               <th scope="row">
                 <div class="media align-items-center">
-                  <img alt="Image placeholder" src="<%= product.image_url %>" class="" style="width: 80px;">
+                  <%if product.avatar.attached?%>
+                    <%= image_tag(product.avatar, alt: 'avatar', :style => "width: 80px;") %>
+                  <%else%>
+                    <img src="<%= product.image_url %>" class="" style="width: 80px;">
+                  <%end%>
                   <div class="media-body pl-3">
                     <div class="lh-100">
                       <%= link_to product.title, product_path(product), class:"text-dark font-weight-bold mb-0" %>
@@ -106,12 +110,12 @@
                   <span class="status"><%= current_user.cart.products.where(id: product.id).count %></span>
                 </span>
                 <div class="row">
-                  <div class="actions ml-3">
+                  <div class="actions ml-4">
                     <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                     <i class="fas fa-minus"></i>
                     <% end %>
                   </div>
-                  <div class="actions ml-3">
+                  <div class="actions ml-2">
                     <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", remote: true, class:"action-item mr-2" do %>
                     <i class="fas fa-plus"></i>
                     <% end %>

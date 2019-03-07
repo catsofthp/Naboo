@@ -89,3 +89,10 @@ admin = User.create!({first_name: 'Naboo', last_name: 'Admin', email: 'nabooadmi
   order = Order.create!(user: admin)
   3.times { OrderProduct.create!(order: order, product: Product.all.sample) }
 end
+
+random_user = User.create! ({first_name: "test", last_name: "test", email: "example@gmail.fr", password: "111111", password_confirmation: "111111", is_admin: "0"})
+
+10.times do
+  order = Order.create!(user: random_user)
+  rand(10).times { OrderProduct.create!(order: order, product: Product.all.sample) }
+end

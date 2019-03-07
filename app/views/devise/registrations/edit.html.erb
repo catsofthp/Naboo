@@ -147,10 +147,11 @@
             </div>
           </div>
           <!-- Save changes buttons -->
-
+          <br/>
           <!-- Show orders -->
           <div id="showOrders">
-            <%= render "orders", orders: current_user.orders %>
+            <h5 class="mb-1">Commandes</h5>
+            <%= render "layouts/orders", orders: current_user.orders %>
           </div>
         <!-- Delete -->
         <div class="mt-5 pt-5 delimiter-top" id="deleteAccount">
