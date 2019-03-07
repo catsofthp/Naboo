@@ -155,9 +155,11 @@
               </div>
             </div>
           <!-- Show orders -->
-          <div id="showOrders">
-            <%= render "layouts/orders", orders: current_user.orders %>
-          </div>
+          <% if current_user.orders.count >=1 %>
+            <div id="showOrders">
+              <%= render "layouts/orders", orders: current_user.orders %>
+            </div>
+          <% end %>
       </div>
       <!-- FORM END -->
 
