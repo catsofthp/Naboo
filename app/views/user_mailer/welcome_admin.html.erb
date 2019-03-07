@@ -4,12 +4,27 @@
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-<h1>Salut et bienvenue chez nous !</h1>
+<h1>Bonjour,</h1>
 <p>
-Merci d'avoir commandé chez nous</p>
+Vous avez reçu une commande de <% @order.user.email %></p>
 <p>
-  Pour accéder à ton espace client, connecte-toi via :.
+<p>
+  Les articles commandés sont :
 </p>
+<p>
+  <% @order.products.each do |product| %>
+</p>
+    <p>
+    - Titre : <% product.title %> Prix <% product.price %>
+    </p>
+  <% end %>
+  <% @order.products.each do |product| %>
+    <%if product.avatar.attached?%>
+      <%= image_tag(product.avatar) %>
+    <%else%>
+      <img src="<%= product.image_url %>">
+    <%end%>
+  <% end %>
 <p> À très vite sur monsite.fr !
 </body>
 </html>
