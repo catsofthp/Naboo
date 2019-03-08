@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_admin(order)
     @order = order
-    mail(from: "nans.noel@gmail.com", to: "nans.noel@gmail.com",
+    mail(from: "nans.noel@gmail.com", to: "nabooadmin@gmail.com",
          subject: "Vous avez reçu une nouvelle commande !")
   end
 

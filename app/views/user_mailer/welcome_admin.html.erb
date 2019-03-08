@@ -18,13 +18,7 @@ Vous avez reçu une commande de <%= @order.user.email %></p>
     - Titre : <%= product.title %> Prix <%= product.price %>
     </p>
   <% end %>
-  <% @order.products.each do |product| %>
-    <%if product.avatar.attached?%>
-      <%= image_tag(product.avatar) %>
-    <%else%>
-      <img src="<%= product.image_url %>">
-    <%end%>
-  <% end %>
+
 <p> À très vite sur naboo-shop.herokuapp.com !
 </body>
 </html>
