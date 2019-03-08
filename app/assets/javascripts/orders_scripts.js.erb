@@ -16,8 +16,8 @@
   scrollToElement("#showAccount")
   scrollToElement("#showOrders")
   scrollToElement("#section02")
-
-  let lastOrder = <%= Order.last.id %> 
+  
+  var lastOrder = <%= Order.all.ids.max %> 
   for(let i = 1; i <= lastOrder; i++) {
     $(`#showOrder${i}`).on("click", function() { $(`#order${i}Title`).toggleClass("collapse"); $(`#order${i}Content`).toggleClass("collapse") } )
   } 

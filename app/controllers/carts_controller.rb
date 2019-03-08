@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :update]
   after_action :add_product_to_cart_from_product_page, only: [:create]
-  respond_to :html, :js
 
   def show
     @products = Product.all

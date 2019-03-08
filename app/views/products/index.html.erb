@@ -35,7 +35,7 @@
               <span class="card-price"><%= product.price %> €</span><br>
               <%= link_to 'Chat-fficher', product, class: "btn btn-soft-info btn-sm" %>
               <% if user_signed_in? %>
-                <%= link_to 'Chat-cheter', carts_path(:product_id => product.id), method: "POST", remote: true, class: "btn btn-soft-success btn-sm" %>
+                <%= link_to 'Chat-cheter', carts_path(:product_id => product.id), method: "POST", class: "btn btn-soft-success btn-sm" %>
               <% end %>
             </div>
             <div class="actions card-product-actions" data-animation-in="slideInLeft" data-animation-out="slideOutLeft">
