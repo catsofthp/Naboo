@@ -112,12 +112,12 @@
                 </span>
                 <div class="row">
                   <div class="actions ml-4">
-                    <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", class:"action-item mr-2" do %>
+                    <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "remove"), method: "PATCH", local: true, remote: true, class:"action-item mr-2" do %>
                       <i class="fas fa-minus"></i>
                     <% end %>
                   </div>
                   <div class="actions ml-2">
-                    <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", class:"action-item mr-2" do %>
+                    <%= link_to cart_path(@cart, :product_id => product.id, :to_do => "add"), method: "PATCH", local: true, remote: true, class:"action-item mr-2" do %>
                      <i class="fas fa-plus"></i>
                     <% end %>
                   </div>

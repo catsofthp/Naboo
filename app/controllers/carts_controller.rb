@@ -4,7 +4,6 @@ class CartsController < ApplicationController
 
   def show
     @products = Product.all
-
   end
 
   def create
@@ -12,9 +11,9 @@ class CartsController < ApplicationController
       @cart = Cart.create!(user: current_user)
     end
     if params[:origin] == "product_page"
-      redirect_to product_path(params[:product_id])
+      redirect_back(fallback_location: product_path(params[:product_id]))
     else
-      redirect_to products_path
+      redirect_back(fallback_location: products_path)
     end
   end
 
@@ -23,7 +22,7 @@ class CartsController < ApplicationController
     if params[:to_do] == "add" then current_user.cart.add_product(Product.find(params[:product_id])) end
     if params[:to_do] == "remove" then current_user.cart.remove_product(Product.find(params[:product_id])) end
     if params[:to_do] == "delete" then current_user.cart.products.where(id: params[:product_id]).count.times {current_user.cart.remove_product(Product.find(params[:product_id]))} end
-    redirect_to cart_path(@cart)
+    redirect_back(fallback_location: cart_path(@cart))
   end
 
   def add_product_to_cart_from_product_page

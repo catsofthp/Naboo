@@ -5,7 +5,7 @@
   <link rel="icon" type="image/png" href="https://image.noelshack.com/fichiers/2019/10/3/1551881449-screenshot-2019-03-06-at-15-10-38.png" />
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300' type='text/css' />
   <%= render 'layouts/addon' %>
-  <%= javascript_include_tag :application %>
+  <%= javascript_include_tag :application, 'data-turbolinks-track': :reload %>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag    'application', media: 'all'%>
 </head>
